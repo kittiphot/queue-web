@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { API_URL } from './api-url';
 
 @Injectable()
 export class ConfigService {
   constructor(private http: HttpClient) { }
 
-  getTemp() {
-    // return this.httpClient.get(`${API_URL}/temp`);
-    return this.http.get(`http://localhost:9000/staff`);
+  getStaff() {
+    return this.http.get(`${API_URL}/staff`);
     
   }
 }

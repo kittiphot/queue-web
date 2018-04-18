@@ -20,7 +20,7 @@ export class StaffComponent implements OnInit {
   }
 
   getTemp() {
-    this.service.getTemp().subscribe(res => {
+    this.service.getStaff().subscribe(res => {
       console.log(res)
       this.temps = res
     }, err => console.log(err))
