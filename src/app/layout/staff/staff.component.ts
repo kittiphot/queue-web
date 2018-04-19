@@ -9,20 +9,24 @@ import { ConfigService } from '../../shared/services/Config.service'
   animations: [routerTransition()]
 })
 export class StaffComponent implements OnInit {
-  private temps: any
+  private staff: any
 
   constructor(private service: ConfigService) {
 
   }
 
   ngOnInit() { 
-    this.getTemp();
+    this.getstaff();
   }
 
-  getTemp() {
+  getstaff() {
     this.service.getStaff().subscribe(res => {
       console.log(res)
-      this.temps = res
+      this.staff = res
     }, err => console.log(err))
+  }
+
+  gotoEdit(){
+    
   }
 }
