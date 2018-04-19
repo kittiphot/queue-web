@@ -3,28 +3,31 @@
     staff
     <small>Statistics Overview</small>
   </h2>
-  <div class="card-body table-responsive" *ngFor="let data of staff">
+  <div class="card-body table-responsive" >
+      <a class="btn btn-sm btn-primary" style="color: white">Register</a>
       <table class="table">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>#</th>
           <th>Name</th>
           <th>Username</th>
           <th>Password</th>
           <th>type</th>
           <th>status</th>
-          <th></th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let data of staff">
           <td>{{data.id}}</td>
           <td>{{data.name}}</td>
           <td>{{data.username}}</td>
           <td>{{data.password}}</td>
           <td>{{data.type}}</td>
           <td>{{data.status}}</td>
-          <td><button type="button" class="btn btn-sm btn-warning">Edit</button> <button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+          <td><a class="btn btn-sm btn-warning" style="color: white">EDIT</a></td>
+          <td><button type="button" class="btn btn-sm btn-danger">DELETE</button></td>
         </tr>
       </tbody>
     </table>
