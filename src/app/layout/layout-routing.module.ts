@@ -10,7 +10,11 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'staff', loadChildren: './staff/staff.module#StaffModule' },
+<<<<<<< HEAD
             { path: 'servicebox', loadChildren: './servicebox/servicebox.module#ServiceboxModule' },
+=======
+            { path: 'queue', loadChildren: './queue/queue.module#QueueModule' },
+>>>>>>> 4c807f8ea2b0a21f381e614cfece7631235387c2
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
