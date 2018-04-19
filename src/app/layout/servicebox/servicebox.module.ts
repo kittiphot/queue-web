@@ -4,6 +4,8 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ServiceboxRoutingModule } from './servicebox-routing.module';
 import { ServiceboxComponent } from './servicebox.component';
+import { ServiceboxFormComponent } from './servicebox.form.component';
+
 import {
     TimelineComponent,
     NotificationComponent,
@@ -28,7 +30,8 @@ import {HttpClientModule} from '@angular/common/http';
         ServiceboxComponent,
         TimelineComponent,
         NotificationComponent,
-        ChatComponent
+        ChatComponent,
+        ServiceboxFormComponent
     ],
     providers: [ConfigService]
 })
