@@ -10,6 +10,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'staff', loadChildren: './staff/staff.module#StaffModule' },
+            { path: 'settings', loadChildren: './settings/settings.module#SettingsModule' },
             { path: 'queue', loadChildren: './queue/queue.module#QueueModule' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
