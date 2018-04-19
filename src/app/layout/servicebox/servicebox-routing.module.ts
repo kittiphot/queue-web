@@ -11,7 +11,11 @@ const routes: Routes = [
     {
         path: 'servicebox-form',
         component: ServiceboxFormComponent,
-      },
+    },
+    {
+        path: 'servicebox-form/:id_servicebox',
+        component: ServiceboxFormComponent,
+    },
 ];
 
 @NgModule({
