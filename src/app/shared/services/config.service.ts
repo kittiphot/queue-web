@@ -8,6 +8,5 @@ export class ConfigService {
 
   getStaff() {
     return this.http.get(`${API_URL}/staff`);
-    
   }
 }
