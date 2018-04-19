@@ -1,7 +1,7 @@
 {
     "editor.wordWrap": "off",
     "files.exclude": {
-			"**/node_modules": {},
+			// "**/node_modules": {},
 			"typings": {},
 			"**/*.map": {},
 			"**/*.js": {
