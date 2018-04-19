@@ -9,20 +9,21 @@ import { ConfigService } from '../../shared/services/Config.service'
   animations: [routerTransition()]
 })
 export class ServiceboxComponent implements OnInit {
-  private temps: any
+  private data: any
 
   constructor(private service: ConfigService) {
 
   }
 
-  ngOnInit() { 
-    // this.getTemp();
+  ngOnInit() {
+    this.service.getServicebox().subscribe(res => {
+      console.log(res)
+      this.data = res
+    }, err=> console.log(err))
   }
 
-  // getTemp() {
-  //   this.service.getservicebox().subscribe(res => {
-  //     console.log(res)
-  //     this.temps = res
-  //   }, err => console.log(err))
-  // }
+
+  gotoEdit(){
+    
+  }
 }

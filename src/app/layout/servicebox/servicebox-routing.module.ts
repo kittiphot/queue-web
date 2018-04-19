@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { serviceboxComponent } from './servicebox.component';
+import { ServiceboxComponent } from './servicebox.component';
 
 const routes: Routes = [
     {
-        path: '', component: ServiceboxComponent
+        path: '', 
+        component: ServiceboxComponent
     }
 ];
 

@@ -8,6 +8,8 @@ export class ConfigService {
 
   getStaff() {
     return this.http.get(`${API_URL}/staff`);
-    
+  }
+  getServicebox() {
+    return this.http.get(`${API_URL}/servicebox`);
   }
 }
