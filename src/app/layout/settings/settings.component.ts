@@ -21,14 +21,14 @@ export class SettingsComponent implements OnInit {
     this.getLastQueue();
   }
 
-  getSettings() {
+  getLastQueue() {
     this.settingsService.getLastQueue().subscribe(res => {
       console.log(res)
       this.lastQueue = res['0']['queue']
     }, err => console.log(err))
   }
 
-  getLastQueue() {
+  getSettings() {
     this.settingsService.getSettings().subscribe(res => {
       console.log(res)
       this.settings = res

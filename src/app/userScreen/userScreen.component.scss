@@ -1,0 +1,20 @@
+$topnav-background-color: #222;
+.userScreen-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    // background: $topnav-background-color;
+    text-align: center;
+    // color: #fff;
+    padding: 20px;
+    // .table {
+    //     border: 2px solid red;
+    //     border-radius: 5px;
+    // }
+    .table, th, td {
+        border: 2px solid rgb(0, 123, 255);
+    }
+}
