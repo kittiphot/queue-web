@@ -5,9 +5,35 @@
     <small>Statistics Overview</small>
   </h2>
 
-  <a [routerLink]="['/settings/settingsForm']" class="btn btn-warning">
+  <!-- <a [routerLink]="['/settings/settingsForm']" class="btn btn-warning">
     <i class="fa fa-pencil" aria-hidden="true"></i>
-  </a>
+  </a> -->
+  <!-- <a [routerLink]="['/settings/settingsForm']" class="btn btn-primary">เพิ่มข้อมูลใหม่</a> -->
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">รูปแบบคิว</span>
+          </div>
+          <!-- <span class="input-group-addon">@</span> -->
+          <input type="text" class="form-control" placeholder="Username" value="{{ queueFormat }}">
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+      <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">คิวปัจจุบัน</span>
+          </div>
+          <!-- <span class="input-group-addon">@</span> -->
+          <input type="text" class="form-control" placeholder="Username" value="{{ lastQueue }}">
+      </div>
+    </div>
+    <div class="col-md-4 text-right">
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-md-12 table-responsive">

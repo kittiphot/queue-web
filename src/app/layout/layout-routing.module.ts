@@ -11,7 +11,6 @@ const routes: Routes = [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'staff', loadChildren: './staff/staff.module#StaffModule' },
             { path: 'settings', loadChildren: './settings/settings.module#SettingsModule' },
-            { path: 'settings/settingsForm', loadChildren: './settings/settingsForm/settingsForm.component' },
             { path: 'servicebox', loadChildren: './servicebox/servicebox.module#ServiceboxModule' },
             { path: 'servicebox/servicebox-form', loadChildren: './servicebox/servicebox.form.component' },
             { path: 'queue', loadChildren: './queue/queue.module#QueueModule' },

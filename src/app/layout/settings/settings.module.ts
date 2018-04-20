@@ -4,6 +4,7 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsComponent } from './settings.component';
+import { SettingsFormComponent } from './settingsForm/settingsForm.component';
 import {
     TimelineComponent,
     NotificationComponent,
@@ -11,7 +12,6 @@ import {
 } from './components';
 import { StatModule } from '../../shared';
 import { SettingsService } from '../../shared/services/settings.service'
-import { SettingsFormComponent } from './settingsForm/settingsForm.component';
 
 @NgModule({
     imports: [
