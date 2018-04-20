@@ -15,5 +15,9 @@ export class ConfigService {
   getServiceboxById(id){
     return this.http.get(`${API_URL}/servicebox_by_id/${id}`);
   }
+  setServicebox(params, status) {
+    return this.http.post(`${API_URL}/servicebox/${status}`, params);
+  }
+
 
 }
