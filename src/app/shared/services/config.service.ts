@@ -14,9 +14,9 @@ export class ConfigService {
     return this.http.get(`${API_URL}/staff/${id}`);
   }
 
-  // setEditstaff(data){
-  //   return this.http.put(`${API_URL}/staff/edit`, data);
-  // }
+  setEditstaff(params){
+    return this.http.post(`${API_URL}/staff/edit`, params);
+  }
 
   getServicebox() {
     return this.http.get(`${API_URL}/servicebox`);
