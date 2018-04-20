@@ -13,6 +13,9 @@ import { StatModule } from '../../shared';
 import { ConfigService } from '../../shared/services/Config.service'
 // import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import { EditStaffComponent } from './edit-staff/edit-staff.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -22,10 +25,12 @@ import {HttpClientModule} from '@angular/common/http';
         StaffRoutingModule,
         StatModule,
         // BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
     declarations: [
         StaffComponent,
+        EditStaffComponent,
         TimelineComponent,
         NotificationComponent,
         ChatComponent

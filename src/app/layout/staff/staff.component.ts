@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ConfigService } from '../../shared/services/Config.service'
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-staff',
@@ -29,8 +30,16 @@ export class StaffComponent implements OnInit {
   gotoEdit(){
     
   }
-  deleteStaff(id:number){
-    this.staff.splice(id, 1);
+  setmageStatus(ID:number){
+let param ={
+  id: ID,
+}
+this.service.deleteStaff(param).subscribe((res)=>{
+console.log(res)
+},(err: HttpErrorResponse)=> {
+  console.log(JSON.stringify(err));
+})
+
   }
 
 

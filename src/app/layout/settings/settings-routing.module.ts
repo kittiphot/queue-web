@@ -7,9 +7,10 @@ const routes: Routes = [
     {
         path: '', component: SettingsComponent
     },
-    // {
-    //     path: 'settingsForm ', component: SettingsFormComponent
-    // }
+    {
+        path: 'settingsForm',
+        component: SettingsFormComponent,
+    }
 ];
 
 @NgModule({
