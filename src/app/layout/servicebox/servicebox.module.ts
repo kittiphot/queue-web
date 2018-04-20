@@ -6,7 +6,7 @@ import { ServiceboxRoutingModule } from './servicebox-routing.module';
 import { ServiceboxComponent } from './servicebox.component';
 import { ServiceboxFormComponent } from './servicebox.form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgForm } from '@angular/forms';
 import {
     TimelineComponent,
     NotificationComponent,
@@ -26,7 +26,9 @@ import {HttpClientModule} from '@angular/common/http';
         StatModule,
         // BrowserModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        // NgForm
+
     ],
     declarations: [
         ServiceboxComponent,

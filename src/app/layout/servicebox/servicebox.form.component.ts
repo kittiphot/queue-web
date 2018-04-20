@@ -48,11 +48,12 @@ export class ServiceboxFormComponent implements OnInit {
       status = 'create';
       console.log('cre')
     } else {
-      status = 'create';
+      status = 'edit';
       // console.log(myform.value)
       console.log('edi')
     }
-    this.service.setServiceboxx(params, status)
+    console.log(status)
+    this.service.setServicebox(params, status)
     .subscribe(res => {
       // this.router.navigate(['restaurants/albums',this.id_restaurant]);
       console.log(res)
