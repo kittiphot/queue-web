@@ -5,6 +5,7 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceboxRoutingModule } from './servicebox-routing.module';
 import { ServiceboxComponent } from './servicebox.component';
 import { ServiceboxFormComponent } from './servicebox.form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
     TimelineComponent,
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
         ServiceboxRoutingModule,
         StatModule,
         // BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
     declarations: [
         ServiceboxComponent,
