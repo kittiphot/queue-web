@@ -6,17 +6,16 @@
         <a routerLink="/staff" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Staff' | translate }}
         </a>
-<<<<<<< HEAD
+        <a routerLink="/settings" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Settings' | translate }}
+        </a>
         <a routerLink="/servicebox" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'chanel' | translate }}
         </a>
-        <!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-=======
         <a routerLink="/queue" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Queue' | translate }}
         </a>
         <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
->>>>>>> 4c807f8ea2b0a21f381e614cfece7631235387c2
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Charts' | translate }}
         </a>
         <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -58,7 +57,7 @@
         <a class="list-group-item more-themes" href="http://www.strapui.com/" >
             {{ 'More Theme' | translate }}
         </a>
-        <!-- <div class="header-fields">
+        <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">
                 <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
             </a>
@@ -135,6 +134,6 @@
                     </ul>
                 </li>
             </div>
-        </div> -->
+        </div>
     </div>
 </nav>

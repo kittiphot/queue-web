@@ -35,8 +35,8 @@ export class QueueComponent implements OnInit {
     }, err => console.log(err))
   }
 
-  setQueue() {
-    this.queueService.setQueue().subscribe(res => {
+  createQueue() {
+    this.queueService.createQueue().subscribe(res => {
       console.log(res)
       this.lists = res
     }, err => console.log(err))

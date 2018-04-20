@@ -1,0 +1,27 @@
+<div class="userScreen-page" [@routerTransition]>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="70%" colspan="2" class="text-right">
+                <div id="time"></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">หมายเลข</th>
+              <th>ช่องที่</th>
+            </tr>
+            <tr *ngFor="let temp of temps">
+              <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
+              <th>{{ temp.id_service_box }}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
