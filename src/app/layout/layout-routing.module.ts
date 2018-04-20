@@ -13,7 +13,6 @@ const routes: Routes = [
             { path: 'settings', loadChildren: './settings/settings.module#SettingsModule' },
             { path: 'servicebox', loadChildren: './servicebox/servicebox.module#ServiceboxModule' },
             { path: 'servicebox/servicebox-form', loadChildren: './servicebox/servicebox.form.component' },
-            { path: 'queue', loadChildren: './queue/queue.module#QueueModule' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
