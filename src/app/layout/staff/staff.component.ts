@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ConfigService } from '../../shared/services/Config.service'
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-staff',
@@ -12,7 +13,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class StaffComponent implements OnInit {
   staff: any
 
-  constructor(private service: ConfigService) {
+  constructor(
+    private service: ConfigService,
+    private router: Router,
+  ) {
 
   }
 
@@ -30,18 +34,17 @@ export class StaffComponent implements OnInit {
   gotoEdit(){
     
   }
-  setmageStatus(ID:number){
-let param ={
-  id: ID,
-}
-this.service.deleteStaff(param).subscribe((res)=>{
-console.log(res)
-},(err: HttpErrorResponse)=> {
-  console.log(JSON.stringify(err));
-})
+        setmageStatus(ID:number){
+      let param =
+      {
+        id: ID,
+      }
+      this.service.deleteStaff(param).subscribe((res)=>{
+        // this.router.navigate(['staff']);
+        this.getstaff();
+      console.log('55555555')
+      },err => console.log(err))
 
-  }
+        }
 
-
-  
 }

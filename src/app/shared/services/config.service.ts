@@ -25,8 +25,9 @@ export class ConfigService {
     return this.http.get(`${API_URL}/servicebox_by_id/${id}`);
   }
   deleteStaff(id){
-    return this.http.put(`${API_URL}/staff/delete/`,id);
+    return this.http.put(`${API_URL}/staff/delete`,id);
   }
+
   setServicebox2(params, status) {
     return this.http.post(`${API_URL}/servicebox/${status}`, params);
   }
