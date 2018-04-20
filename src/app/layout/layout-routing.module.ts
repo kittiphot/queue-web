@@ -10,7 +10,6 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'staff', loadChildren: './staff/staff.module#StaffModule' },
-            { path: 'servicebox', loadChildren: './servicebox/servicebox.module#ServiceboxModule' },
             { path: 'settings', loadChildren: './settings/settings.module#SettingsModule' },
             { path: 'servicebox', loadChildren: './servicebox/servicebox.module#ServiceboxModule' },
             { path: 'servicebox/servicebox-form', loadChildren: './servicebox/servicebox.form.component' },
