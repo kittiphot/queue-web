@@ -8,11 +8,17 @@ export class ConfigService {
 
   getStaff() {
     return this.http.get(`${API_URL}/staff`);
-<<<<<<< HEAD
   }
+
+  findStaff(id) {
+    return this.http.get(`${API_URL}/staff/${id}`);
+  }
+
+  // setEditstaff(data){
+  //   return this.http.put(`${API_URL}/staff/edit`, data);
+  // }
+
   getServicebox() {
     return this.http.get(`${API_URL}/servicebox`);
-=======
->>>>>>> 4c807f8ea2b0a21f381e614cfece7631235387c2
   }
 }

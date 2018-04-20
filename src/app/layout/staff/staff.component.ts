@@ -25,8 +25,4 @@ export class StaffComponent implements OnInit {
       this.staff = res
     }, err => console.log(err))
   }
-
-  gotoEdit(){
-    
-  }
 }
