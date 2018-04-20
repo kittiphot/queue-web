@@ -8,8 +8,8 @@ export class SettingsService {
   constructor(private http: HttpClient) { }
 
   getSettings() {
-    // return this.http.get(`${API_URL}/config`);
-    return this.http.get(`http://localhost:8000/config`);
+    return this.http.get(`${API_URL}/config`);
+    // return this.http.get(`http://localhost:8000/config`);
   }
 
   getTest() {
@@ -19,6 +19,7 @@ export class SettingsService {
   }
 
   getLastQueue() {
-    return this.http.get(`http://localhost:8000/last`)
+    return this.http.get(`${API_URL}/last`);
+    // return this.http.get(`http://localhost:8000/last`)
   }
 }

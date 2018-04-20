@@ -5,10 +5,15 @@ import { UserScreenRoutingModule } from './userScreen-routing.module';
 import { UserScreenComponent } from './userScreen.component';
 import { QueueService } from '../shared/services/queue.service'
 import { SettingsService } from '../shared/services/settings.service'
+import { DateTimeService } from '../shared/services/datetime.service'
 
 @NgModule({
     imports: [CommonModule, UserScreenRoutingModule],
     declarations: [UserScreenComponent],
-    providers: [QueueService, SettingsService]
+    providers: [
+        QueueService,
+        SettingsService,
+        DateTimeService
+    ]
 })
 export class UserScreenModule {}
