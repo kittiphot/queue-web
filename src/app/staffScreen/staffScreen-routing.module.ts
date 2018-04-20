@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { QueueComponent } from './queue.component';
+import { StaffScreenComponent } from './staffScreen.component';
 
 const routes: Routes = [
     {
-        path: '', component: QueueComponent
+        path: '',
+        component: StaffScreenComponent
     }
 ];
 
@@ -12,5 +13,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class QueueRoutingModule {
-}
+export class StaffScreenRoutingModule {}

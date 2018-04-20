@@ -1,0 +1,69 @@
+<div class="staffScreen-page" [@routerTransition]>
+  <div class="row" style="border: 2px solid rgb(0, 123, 255);">
+    <div class="col-md-12">
+
+      <div class="text-right" id="time"></div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 text-right">
+          ช่องบริการที่
+        </div>
+        <div class="col-md-2">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 text-right">
+          คิวปัจจุบัน
+        </div>
+        <div class="col-md-3 text-center">
+          {{ queueFormat }}{{ currentQueue }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3 text-center" style="color: red">
+          เวลาเรียกคิว {{ callTime }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 text-right">
+          คิวในระบบ
+        </div>
+        <div class="col-md-3 text-center">
+          {{ queueAmount }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary btn-lg btn-block" (click)="callQueue()">เรียกคิวใหม่</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-primary btn-lg btn-block">เรียกซํ้า</button>
+        </div>
+
+        <div class="col-md-6">
+          <button class="btn btn-danger btn-lg btn-block">ออกจากระบบ</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-info btn-lg btn-block" (click)="createQueue()">กดคิว</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
