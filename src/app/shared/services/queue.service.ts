@@ -11,9 +11,19 @@ export class QueueService {
     return this.http.get(`http://localhost:8000/temp`);
   }
 
+  getCurrentQueue($id) {
+    // return this.http.get(`${API_URL}/temp/` + $id);
+    return this.http.get(`http://localhost:8000/temp/` + $id);
+  }
+
   getList() {
     // return this.http.get(`${API_URL}/list`);
     return this.http.get(`http://localhost:8000/list`);
+  }
+
+  getListCount() {
+    // return this.http.get(`${API_URL}/list/count`);
+    return this.http.get(`http://localhost:8000/list/count`);
   }
 
   createQueue() {
