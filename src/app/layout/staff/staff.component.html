@@ -26,7 +26,7 @@
           <td>{{data.password}}</td>
           <td>{{data.type}}</td>
           <td>{{data.status}}</td>
-          <td><a class="btn btn-sm btn-warning" style="color: white">EDIT</a></td>
+          <td><a [routerLink]="['/staff/edit', data.id]" class="btn btn-sm btn-warning" style="color: white">EDIT</a></td>
 
           <td> <button type="button" (click)="setmageStatus(data.id)" class="btn-danger">
             <i class="fa fa-trash-o" aria-hidden="true"></i>
