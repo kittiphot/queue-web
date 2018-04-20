@@ -30,5 +30,13 @@ export class EditStaffComponent {
 
      onSubmit(myform: NgForm) {
         console.log(myform.value)
+        let params = myform.value;
+        params['id'] = this.id;
+        this.service.setEditstaff(params)
+        .subscribe(res => {
+          this.router.navigate(['staff']);
+          console.log(res)
+        }, err => console.log(err))
+    
       }
 }
