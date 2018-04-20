@@ -2,42 +2,40 @@
   <div class="row" style="border: 2px solid rgb(0, 123, 255);">
     <div class="col-md-12">
 
-      <div class="text-right" id="time"></div>
-
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-2 text-right">
-          ช่องบริการที่
+        <div class="col-md-2 col-5 text-right">
+          ช่องบริการที่ 1.
         </div>
-        <div class="col-md-2">
-
+        <div class="col-md-2 col-7 text-center">
+          {{ time }}
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-2 text-right">
+        <div class="col-md-2 col-5 text-right">
           คิวปัจจุบัน
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-md-2 col-7 text-center">
           {{ queueFormat }}{{ currentQueue }}
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-2"></div>
-        <div class="col-md-3 text-center" style="color: red">
+        <div class="col-md-2 col-5"></div>
+        <div class="col-md-2 col-7 text-center" style="color: red">
           เวลาเรียกคิว {{ callTime }}
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-2 text-right">
+        <div class="col-md-2 col-5 text-right">
           คิวในระบบ
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-md-2 col-7 text-center">
           {{ queueAmount }}
         </div>
       </div>
