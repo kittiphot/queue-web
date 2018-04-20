@@ -27,6 +27,9 @@ export class ConfigService {
   setServicebox2(params, status) {
     return this.http.post(`${API_URL}/servicebox/${status}`, params);
   }
+  setCStaff(params) {
+    return this.http.post(`${API_URL}/staff/create`,params);
+  }
   // setServicebox(params, status) {
   //   console.log("POST");
   //   let url = this.http.post(`${API_URL}/servicebox/${status}`);

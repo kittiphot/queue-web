@@ -16,6 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { EditStaffComponent } from './edit-staff/edit-staff.component';
 
 import { FormsModule } from '@angular/forms';
+import { StaffFormComponent } from './staff.form.component';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
         EditStaffComponent,
         TimelineComponent,
         NotificationComponent,
-        ChatComponent
+        ChatComponent,
+        StaffFormComponent
     ],
     providers: [ConfigService]
 })

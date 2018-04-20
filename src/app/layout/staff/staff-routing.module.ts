@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StaffComponent } from './staff.component';
 import { EditStaffComponent } from './edit-staff/edit-staff.component';
+import {StaffFormComponent}from './staff.form.component';
 
 const routes: Routes = [
     {
@@ -9,6 +10,15 @@ const routes: Routes = [
     }
     ,    {
         path: 'edit/:id', component: EditStaffComponent,
+    },
+    {
+        path: 'staff-form',
+        component: StaffFormComponent,
+    }
+    ,
+    {
+        path: 'staff-form/:id_staff',
+        component: StaffFormComponent,
     }
 ];
 
