@@ -15,5 +15,9 @@ export class ConfigService {
   getServiceboxById(id){
     return this.http.get(`${API_URL}/servicebox_by_id/${id}`);
   }
+  Delete(id){
+    return this.http.delete(`${API_URL}/staff`);
+  }
+
 
 }

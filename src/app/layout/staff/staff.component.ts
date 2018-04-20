@@ -9,7 +9,7 @@ import { ConfigService } from '../../shared/services/Config.service'
   animations: [routerTransition()]
 })
 export class StaffComponent implements OnInit {
-  private staff: any
+  staff: any
 
   constructor(private service: ConfigService) {
 
@@ -29,4 +29,10 @@ export class StaffComponent implements OnInit {
   gotoEdit(){
     
   }
+  deleteStaff(id:number){
+    this.staff.splice(id, 1);
+  }
+
+
+  
 }
