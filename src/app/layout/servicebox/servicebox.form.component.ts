@@ -5,8 +5,6 @@ import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfigService } from '../../shared/services/Config.service'
 
-
-
 @Component({
   selector: 'app-servicebox',
   templateUrl: './servicebox.form.component.html',
@@ -40,7 +38,6 @@ export class ServiceboxFormComponent implements OnInit {
   onSubmit(myform: NgForm) {
     console.log(myform.value)
     let params = myform.value;
-    params['id_servicebox'] = this.id_servicebox;
     let status = '';
     // console.log('55555555555')
     // console.log(this.id_servicebox)
@@ -50,12 +47,13 @@ export class ServiceboxFormComponent implements OnInit {
     } else {
       status = 'edit';
       // console.log(myform.value)
+      params['id'] = this.id_servicebox;
       console.log('edi')
     }
     console.log(status)
-    this.service.setServicebox(params, status)
+    this.service.setServicebox2(params, status)
     .subscribe(res => {
-      // this.router.navigate(['restaurants/albums',this.id_restaurant]);
+      this.router.navigate(['servicebox']);
       console.log(res)
     }, err => console.log(err))
   }
