@@ -1,4 +1,7 @@
-<h3><b>Edit Staff</b></h3><br>
+<h3>
+  <b>Edit Staff</b>
+</h3>
+<br>
 <form #sform="ngForm" (ngSubmit)="onSubmit(sform)">
   <input name="id" type="hidden" ngModel="{{data.id}}">
 
@@ -19,8 +22,10 @@
     <input name="type" type="text" class="form-control" ngModel="{{data.type}}">
   </div>
   <div class="form-group">
-      <label for="status">Status</label>
-      <input name="status" type="text" class="form-control" ngModel="{{data.status}}">
+    <label for="status">Status</label>
+    <input name="status" type="text" class="form-control" ngModel="{{data.status}}">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-success">
+    <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save
+  </button>
 </form>

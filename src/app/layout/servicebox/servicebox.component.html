@@ -1,22 +1,23 @@
 <div [@routerTransition]>
   <h2 class="text-muted">
-   Servicebox
-    <small>Servicebox Overview</small>
+    Servicebox
+    <!-- <small>Servicebox Overview</small> -->
   </h2>
 
-  <div class="card-body table-responsive table-hover" >
-      <div class="col-sm-12 col-md-12 text-right">
-          <a [routerLink]="['/servicebox/servicebox-form']" class="btn btn-primary">เพิ่มข้อมูลใหม่</a>
-          
-      </div>
-        <br>
-      <table class="table">
+  <div class="card-body table-responsive table-hover">
+    <div class="col-sm-12 col-md-12 text-right">
+      <a [routerLink]="['/servicebox/servicebox-form']" class="btn btn-primary">
+        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
+      </a>
+    </div>
+    <br>
+    <table class="table">
       <thead>
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>edit</th>
-          <!-- <th>status</th> -->
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -25,9 +26,15 @@
           <td>{{value.name}}</td>
           <!-- <td>{{value.status}}</td> -->
           <td>
-              <a  [routerLink]="['/servicebox/servicebox-form', value.id]" class="btn btn-warning">edit</a>
-          </td> 
-          <!-- <td><button type="button" class="btn btn-sm btn-success">on</button>  -->
+            <a [routerLink]="['/servicebox/servicebox-form', value.id]" class="btn btn-warning">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+          </td>
+          <td>
+            <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

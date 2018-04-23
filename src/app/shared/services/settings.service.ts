@@ -8,18 +8,20 @@ export class SettingsService {
   constructor(private http: HttpClient) { }
 
   getSettings() {
-    return this.http.get(`${API_URL}/config`);
-    // return this.http.get(`http://localhost:8000/config`);
+    return Observable.interval(1000).flatMap((i) =>
+      this.http.get(`${API_URL}/config`)
+    )
   }
 
-  getTest() {
-    return Observable.interval(5000).flatMap((i) =>
-      this.http.get(`http://localhost:8000/config`)
-    )
+  getResetQueue() {
+    return this.http.get(`${API_URL}/resetQueue`);
+  }
+
+  setQueueFormat(param) {
+    return this.http.post(`${API_URL}/editQueueFormat`, param);
   }
 
   getLastQueue() {
     return this.http.get(`${API_URL}/last`);
-    // return this.http.get(`http://localhost:8000/last`)
   }
 }

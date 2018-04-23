@@ -1,35 +1,31 @@
 <div class="login-page" [@routerTransition]>
-    <div class="row justify-content-md-center">
-        <div class="col-md-4">
-            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
-            <h1>SB Admin BS4 Angular5</h1>
-            <form role="form">
-                <div class="form-content">
-                    <div class="form-group">
-                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Username">
-                    </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+      <h1>SB Admin BS4 Angular5</h1>
+      <form role="form" #value="ngForm" (ngSubmit)="onSubmit(value)">
+        <div class="form-content">
+          <div class="form-group">
+            <input type="text" class="form-control input-underline input-lg" name="username" ngModel placeholder="Username">
+          </div>
 
-                    <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
-                    </div>
+          <div class="form-group">
+            <input type="password" class="form-control input-underline input-lg" name="password" ngModel placeholder="Password">
+          </div>
 
-                    <div class="form-group">
-                        <select name="serviceBox" class="form-control input-underline input-lg">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Log in </a>
-                &nbsp;
-                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
-            </form>
-            <br>
-            <a class="btn rounded-btn" [routerLink]="['/userScreen']"> User Screen </a>
-            <br><br>
-            <a class="btn rounded-btn" [routerLink]="['/staffScreen']"> Staff Screen </a>
+          <div class="form-group">
+            <select name="serviceBox" ngModel="0" class="form-control input-underline input-lg">
+              <option value="0">Please select a service box.</option>
+              <option *ngFor="let serviceBox of serviceBoxs" value="{{ serviceBox.id }}">{{ serviceBox.name }}</option>
+            </select>
+          </div>
         </div>
+        <button type="submit" class="btn rounded-btn"> Log in </button>
+        &nbsp;
+        <!-- <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a> -->
+      </form>
+      <br>
+      <a class="btn rounded-btn" [routerLink]="['/userScreen']"> User Screen </a>
     </div>
+  </div>
 </div>

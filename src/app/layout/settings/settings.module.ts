@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsComponent } from './settings.component';
-import { SettingsFormComponent } from './settingsForm/settingsForm.component';
 import {
     TimelineComponent,
     NotificationComponent,
@@ -12,6 +12,7 @@ import {
 } from './components';
 import { StatModule } from '../../shared';
 import { SettingsService } from '../../shared/services/settings.service'
+import { DateTimeService } from '../../shared/services/datetime.service'
 
 @NgModule({
     imports: [
@@ -19,15 +20,18 @@ import { SettingsService } from '../../shared/services/settings.service'
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
         SettingsRoutingModule,
-        StatModule
+        StatModule,
+        FormsModule
     ],
     declarations: [
         SettingsComponent,
         TimelineComponent,
         NotificationComponent,
-        ChatComponent,
-        SettingsFormComponent
+        ChatComponent
     ],
-    providers: [SettingsService]
+    providers: [
+        SettingsService,
+        DateTimeService
+    ]
 })
 export class SettingsModule {}

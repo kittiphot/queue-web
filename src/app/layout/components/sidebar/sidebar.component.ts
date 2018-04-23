@@ -62,5 +62,7 @@ export class SidebarComponent {
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
+        localStorage.removeItem('logged_profile');
+        localStorage.removeItem('idServiceBox');
     }
 }
