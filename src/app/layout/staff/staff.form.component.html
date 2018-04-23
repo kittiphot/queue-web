@@ -6,7 +6,6 @@
       <form #f="ngForm" (ngSubmit)="onSubmit(f)">
         <!-- #f="ngForm" (ngSubmit)="onSubmit(f)" -->
         <div class="row">
-
           <div class="col-md-2 text-right">
             <div class="form-group">
               <label class="col-form-label">Name</label>
@@ -44,12 +43,15 @@
           </div>
           <div class="col-md-10">
             <div class="form-group">
+
+              <select name="type" ngModel class="form-control input-underline input-lg">
+                <option value="0">Please select a service box.</option>
+                <option *ngFor="let serviceBox of serviceBoxs" value="{{ serviceBox.id }}">{{ serviceBox.name }}</option>
+              </select>
               <input type="text" class="form-control" placeholder="type" name="type" ngModel="{{ value.type }}">
             </div>
           </div>
-
         </div>
-
 
         <div class="col-md-12 text-right">
           <div class="form-group">
