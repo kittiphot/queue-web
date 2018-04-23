@@ -35,17 +35,15 @@
                         <div class="panel-heading">
                             <div class="row">
 
-                                <div class="col-xs-9 text-right">
+                                <div class="col-xs-12 text-right">
                                     <div class="huge">คิวปัจจุบัน</div>
-                                    <div class="row">
-                                        <div class="col-md-4">id</div>
+                                    <!-- <div class="row">
                                         <div class="col-md-4">queue</div>
                                         <div class="col-md-4">chanel</div>
-                                    </div>
+                                    </div> -->
                                     <div class="row" *ngFor="let value of data">
-                                        <div class="col-md-4">{{value.id}}</div>
-                                        <div class="col-md-4">{{value.queue}}</div>
-                                        <div class="col-md-4">{{value.id_service_box}}</div>
+                                        <div class="col-md-6">คิวที่/{{value.queue}}</div>
+                                        <div class="col-md-6">ช่องที่/{{value.id_service_box}}</div>
                                     </div>
                                 </div>
                             </div>
