@@ -1,71 +1,122 @@
 <div [@routerTransition]>
 
   <h2 class="text-muted">
-    settings
-    <small>Statistics Overview</small>
+    Settings
+    <!-- <small>Statistics Overview</small> -->
   </h2>
-
-  <!-- <a [routerLink]="['/settings/settingsForm']" class="btn btn-warning">
-    <i class="fa fa-pencil" aria-hidden="true"></i>
-  </a> -->
-  <!-- <a [routerLink]="['/settings/settingsForm']" class="btn btn-primary">เพิ่มข้อมูลใหม่</a> -->
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">รูปแบบคิว</span>
-        </div>
-        <!-- <span class="input-group-addon">@</span> -->
-        <input type="text" class="form-control" placeholder="Username" value="{{ queueFormat }}">
-      </div>
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-2">
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">คิวปัจจุบัน</span>
-        </div>
-        <!-- <span class="input-group-addon">@</span> -->
-        <input type="text" class="form-control" placeholder="Queue" value="{{ lastQueue }}">
-      </div>
-    </div>
-    <div class="col-md-2 text-left">
-      <button type="submit" class="btn btn-success">Reset</button>
-    </div>
-    <div class="col-md-2 text-right">
-      <button type="submit" class="btn btn-success">Save</button>
-    </div>
-  </div>
 
   <br>
 
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Logo
-        </label>
+  <form #value="ngForm" (ngSubmit)="onSubmit(value)">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">รูปแบบคิว</span>
+          </div>
+          <input type="text" class="form-control" name="queueFormat" ngModel="{{ queueFormat }}">
+        </div>
       </div>
-      <input type="text" class="form-control" placeholder="คิวที่ 00001" value="{{ lastQueue }}">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> QR Code
-        </label>
+      <div class="col-md-3"></div>
+      <div class="col-md-2">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">คิวปัจจุบัน</span>
+          </div>
+          <input type="text" class="form-control" value="{{ lastQueue }}">
+        </div>
       </div>
-      <input type="text" class="form-control" placeholder="Date Time" value="{{ lastQueue }}">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> คิวที่รอ
-        </label>
+      <div class="col-md-1 text-right">
+        <div class="form-group">
+          <button type="submit" class="btn btn-warning" (click)="resetQueue()">Reset</button>
+        </div>
       </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Footer
-        </label>
+      <div class="col-md-2 text-right">
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
       </div>
     </div>
-  </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <div class="checkbox">
+          <input type="checkbox">
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="form-group">
+          <label>
+            Logo
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right"></div>
+      <div class="col-md-4 text-center">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="00001" name="queue" ngModel="{{ queueFormat }}{{ lastQueue }}" disabled>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <div class="checkbox">
+          <input type="checkbox">
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="form-group">
+          <label>
+            QR Code
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right"></div>
+      <div class="col-md-4 text-center">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Date Time" name="dateTime" ngModel="{{ date }}.&nbsp;{{ time }}" disabled>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <div class="checkbox">
+          <input type="checkbox">
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="form-group">
+          <label>
+            คิวที่รอ
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <div class="checkbox">
+          <input type="checkbox">
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="form-group">
+          <label>
+            Footer
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
 
 </div>
