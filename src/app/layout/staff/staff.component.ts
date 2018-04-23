@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { ConfigService } from '../../shared/services/Config.service'
+import { ConfigService } from '../../shared/services/config.service'
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 // import { ConfigService } from '../../shared/services/Config.service'
-import { QueueService } from '../../shared/services/Queue.service'
+import { QueueService } from '../../shared/services/queue.service'
 
 @Component({
   selector: 'app-dashboard2',

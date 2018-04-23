@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { ConfigService } from '../../shared/services/Config.service'
+import { ConfigService } from '../../shared/services/config.service'
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 @Component({

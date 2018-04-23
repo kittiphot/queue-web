@@ -15,7 +15,7 @@ import {
     ChatComponent
 } from './components';
 import { StatModule } from '../../shared';
-import { ConfigService } from '../../shared/services/Config.service'
+import { ConfigService } from '../../shared/services/config.service'
 // import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 
