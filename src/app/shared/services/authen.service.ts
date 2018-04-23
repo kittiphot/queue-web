@@ -3,14 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { API_URL } from './api-url';
 
 @Injectable()
-export class SettingsService {
+export class AuthenService {
   constructor(private http: HttpClient) { }
 
-  getSettings() {
-    return this.http.get(`${API_URL}/config`);
-  }
-
-  getLastQueue() {
-    return this.http.get(`${API_URL}/last`);
+  getAuthen(params) {
+    return this.http.post(`${API_URL}/authen`, params);
   }
 }

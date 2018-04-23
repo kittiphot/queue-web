@@ -10,14 +10,12 @@ export class DateTimeService {
   getDate() {
     return Observable.interval(1000).flatMap((i) =>
       this.http.get(`${API_URL}/date`)
-      // this.http.get(`http://localhost:8000/date`)
     )
   }
 
   getTime() {
     return Observable.interval(1000).flatMap((i) =>
       this.http.get(`${API_URL}/time`)
-      // this.http.get(`http://localhost:8000/time`)
     )
   }
 }

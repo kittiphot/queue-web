@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-2 col-5 text-right">
-          ช่องบริการที่ 1.
+          ช่องบริการที่ {{ idServiceBox }}.
         </div>
         <div class="col-md-2 col-7 text-center">
           {{ time }}
@@ -52,7 +52,7 @@
         </div>
 
         <div class="col-md-6">
-          <button class="btn btn-danger btn-lg btn-block">ออกจากระบบ</button>
+          <button class="btn btn-danger btn-lg btn-block" (click)="onLoggedout()">ออกจากระบบ</button>
         </div>
       </div>
 

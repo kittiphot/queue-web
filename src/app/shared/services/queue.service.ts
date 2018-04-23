@@ -10,32 +10,30 @@ export class QueueService {
   getTemp() {
     return Observable.interval(1000).flatMap((i) =>
       this.http.get(`${API_URL}/temp`)
-      // return this.http.get(`http://localhost:8000/temp`);
     )
   }
 
   getCurrentQueue($id) {
-    return this.http.get(`${API_URL}/temp/` + $id);
-    // return this.http.get(`http://localhost:8000/temp/` + $id);
+    return Observable.interval(1000).flatMap((i) =>
+    this.http.get(`${API_URL}/temp/` + $id)
+    )
   }
 
   getList() {
     return this.http.get(`${API_URL}/list`);
-    // return this.http.get(`http://localhost:8000/list`);
   }
 
   getListCount() {
-    return this.http.get(`${API_URL}/list/count`);
-    // return this.http.get(`http://localhost:8000/list/count`);
+    return Observable.interval(1000).flatMap((i) =>
+      this.http.get(`${API_URL}/list/count`)
+    )
   }
 
   createQueue() {
     return this.http.get(`${API_URL}/list/create`);
-    // return this.http.get(`http://localhost:8000/list/create`);
   }
 
-  callQueue() {
-    return this.http.get(`${API_URL}/list/edit`);
-    // return this.http.get(`http://localhost:8000/list/edit`);
+  callQueue(params) {
+    return this.http.post(`${API_URL}/list/edit`, params);
   }
 }
