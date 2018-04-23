@@ -6,7 +6,6 @@
     <!-- <small>Statistics Overview</small> -->
   </h2>
 
-<<<<<<< HEAD
   <br>
 
   <form #value="ngForm" (ngSubmit)="onSubmit(value)">
@@ -19,7 +18,7 @@
           <input type="text" class="form-control" name="queueFormat" ngModel="{{ queueFormat }}">
         </div>
       </div>
-      <div class="col-md-3"></div>
+      <div class="col-md-2"></div>
       <div class="col-md-2">
         <div class="form-group input-group">
           <div class="input-group-prepend">
@@ -30,28 +29,14 @@
       </div>
       <div class="col-md-1 text-right">
         <div class="form-group">
-          <button type="submit" class="btn btn-warning" (click)="resetQueue()">Reset</button>
+          <button type="submit" class="btn btn-warning" (click)="resetQueue()"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset</button>
         </div>
       </div>
-      <div class="col-md-2 text-right">
+      <div class="col-md-4 text-right">
         <div class="form-group">
-          <button type="submit" class="btn btn-success">Save</button>
-=======
-  <!-- <a [routerLink]="['/settings/settingsForm']" class="btn btn-warning">
-    <i class="fa fa-pencil" aria-hidden="true"></i>
-  </a> -->
-  <!-- <a [routerLink]="['/settings/settingsForm']" class="btn btn-primary">เพิ่มข้อมูลใหม่</a> -->
-<div class="paanel">
-  <div class="panel-body">
-    maha
-  </div>
-</div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">รูปแบบคิว</span>
->>>>>>> c15e676c1be17a5d3a4ba7619c4c8f358900f449
+          <button type="submit" class="btn btn-success">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save
+          </button>
         </div>
       </div>
     </div>

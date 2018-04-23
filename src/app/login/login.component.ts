@@ -4,6 +4,7 @@ import { routerTransition } from '../router.animations';
 import { NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 import { AuthenService } from '../shared/services/authen.service'
+import { ConfigService } from '../shared/services/Config.service'
 
 @Component({
   selector: 'app-login',
@@ -13,25 +14,23 @@ import { AuthenService } from '../shared/services/authen.service'
 })
 export class LoginComponent implements OnInit {
   staff: any
+  serviceBoxs: any
 
   constructor(
     public router: Router,
-    private service: AuthenService,
+    private authenService: AuthenService,
+    private configService: ConfigService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getServiceBox();
+  }
 
-  // onLoggedin() {
-  //   localStorage.setItem('isLoggedin', 'true');
-  //   console.log('name');
-  //   this.router.navigate(['/dashboard']);
-  // }
-
-  getstaff(params) {
-    this.service.getAuthen(params).subscribe(res => {
-      // console.log(res)
-      this.staff = res
-    }, err => console.log(err))
+  getServiceBox() {
+    this.configService.getServicebox().subscribe(res => {
+      console.log(res)
+      this.serviceBoxs = res
+    }, err=> console.log(err))
   }
 
   onSubmit(myform: NgForm) {
@@ -40,7 +39,7 @@ export class LoginComponent implements OnInit {
       username: myform.value.username,
       password: myform.value.password
     }
-    this.service.getAuthen(params).subscribe(res => {
+    this.authenService.getAuthen(params).subscribe(res => {
       console.log(res['0'])
       let logged_profile = JSON.stringify(res['0']);
       localStorage.setItem('logged_profile', logged_profile);
@@ -58,4 +57,10 @@ export class LoginComponent implements OnInit {
       }
     }, err => console.log(err))
   }
+
+  // onLoggedin() {
+  //   localStorage.setItem('isLoggedin', 'true');
+  //   console.log('name');
+  //   this.router.navigate(['/dashboard']);
+  // }
 }

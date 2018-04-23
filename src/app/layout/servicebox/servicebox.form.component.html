@@ -1,12 +1,10 @@
-
-
 <div class="animated fadeIn">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Servicebox</h2>
       <div class="fh5co-spacer fh5co-spacer-sm"></div>
       <form #i="ngForm" (ngSubmit)="onSubmit(i)">
-          <!-- #f="ngForm" (ngSubmit)="onSubmit(f)" -->
+        <!-- #f="ngForm" (ngSubmit)="onSubmit(f)" -->
         <div class="row">
 
           <div class="col-md-2 text-right">
@@ -17,15 +15,17 @@
           <div class="col-md-10">
             <div class="form-group">
               <!-- <input type="text" class="form-control" placeholder="Name" name="name" value="{{ value.name }}"> -->
-              <input type="text" class="form-control" placeholder="Name" name="name"  ngModel="{{ value.name }}">
+              <input type="text" class="form-control" placeholder="Name" name="name" ngModel="{{ value.name }}">
               <!-- <input type="text" class="form-control" placeholder="Name" name="name"  [(ngModel)]="value.name"> -->
             </div>
           </div>
 
           <div class="col-md-12 text-right">
             <div class="form-group">
-               <input type="hidden" name="id"ngModel="{{ value.id }}">
-              <input type="submit" class="btn btn-success" value="Save">
+              <input type="hidden" name="id" ngModel="{{ value.id }}">
+              <button type="submit" class="btn btn-success">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save
+              </button>
             </div>
           </div>
 
@@ -35,4 +35,3 @@
     </div>
 
   </div>
-

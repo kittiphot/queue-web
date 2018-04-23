@@ -15,24 +15,17 @@
 
           <div class="form-group">
             <select name="serviceBox" ngModel="0" class="form-control input-underline input-lg">
-              <option value="0">กรุณาเลือกช่อง</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
+              <option value="0">Please select a service box.</option>
+              <option *ngFor="let serviceBox of serviceBoxs" value="{{ serviceBox.id }}">{{ serviceBox.name }}</option>
             </select>
           </div>
         </div>
-        <!-- <button type="submit" class="btn rounded-btn" (click)="onLoggedin()"> Log in </button> -->
         <button type="submit" class="btn rounded-btn"> Log in </button>
         &nbsp;
         <!-- <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a> -->
       </form>
       <br>
       <a class="btn rounded-btn" [routerLink]="['/userScreen']"> User Screen </a>
-      <br>
-      <br>
-      <a class="btn rounded-btn" [routerLink]="['/staffScreen']"> Staff Screen </a>
     </div>
   </div>
 </div>
