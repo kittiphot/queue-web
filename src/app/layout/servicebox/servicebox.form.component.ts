@@ -3,7 +3,7 @@ import { routerTransition } from '../../router.animations';
 import { NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConfigService } from '../../shared/services/Config.service'
+import { ConfigService } from '../../shared/services/config.service'
 
 
 @Component({
