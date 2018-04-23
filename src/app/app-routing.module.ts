@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: 'login', loadChildren: './login/login.module#LoginModule' },    
     { path: 'userScreen', loadChildren: './userScreen/userScreen.module#UserScreenModule' },
     { path: 'staffScreen', loadChildren: './staffScreen/staffScreen.module#StaffScreenModule' },
+    { path: 'queue/:queue', loadChildren: './queueScreen/queueScreen.module#QueueScreenModule' },
     { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },

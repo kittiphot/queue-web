@@ -38,4 +38,9 @@ export class QueueService {
     return this.http.get(`${API_URL}/list/edit`);
     // return this.http.get(`http://localhost:8000/list/edit`);
   }
+
+   getleftQueue($queue){
+    return Observable.interval(1000).flatMap((i) =>
+    this.http.get(`${API_URL}/queue/left/` + $queue))
+   }
 }

@@ -32,14 +32,14 @@ export class StaffScreenComponent implements OnInit {
     this.getTime();
   }
 
-  getTime($id = 4) {
+  getTime($id = 1) {
     this.dateTimeService.getTime().subscribe(res => {
       console.log(res)
       this.time = res;
     }, err => console.log(err))
   }
 
-  getCurrentQueue($id = 4) {
+  getCurrentQueue($id = 1) {
     this.queueService.getCurrentQueue($id).subscribe(res => {
       console.log(res)
       this.currentQueue = res['queue']

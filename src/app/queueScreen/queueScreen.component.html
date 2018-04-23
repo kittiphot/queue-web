@@ -1,0 +1,52 @@
+<div class="staffScreen-page" [@routerTransition]>
+    <div class="row" style="border: 2px solid rgb(0, 123, 255);">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1><b>ร้าน XXXXX</b></h1>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <strong>เวลา {{ time }}</strong>
+                </div>
+            </div>
+            
+            <br>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <strong>คิวของท่าน</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <strong class="txtNumber" style="color: red">{{ queueFormat }}{{myQueue}}</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <strong>คิวปัจจุบัน</strong>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <strong class="txtNumber" style="color: skyblue;">{{ queueFormat }}{{ temps }}</strong>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>เหลืออีก {{queueAmount}} คิว</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
