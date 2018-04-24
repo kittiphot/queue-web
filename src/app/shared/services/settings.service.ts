@@ -32,4 +32,8 @@ export class SettingsService {
   getShowSettingsByStatus() {
     return this.http.get(`${API_URL}/settings_by_status`);
   }
+
+  setShowSettings(params) {
+    return this.http.post(`${API_URL}/edit_settings`, params);
+  }
 }

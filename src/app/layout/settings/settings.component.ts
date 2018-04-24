@@ -83,13 +83,30 @@ export class SettingsComponent implements OnInit {
   }
 
   onSubmit(myform: NgForm) {
-    console.log(myform.value)
-    // let param = {
-    //   queueFormat: myform.value.queueFormat
-    // }
-    // this.settingsService.setQueueFormat(param).subscribe(res => {
-    //   console.log(res)
-    // }, err => console.log(err))
+    // console.log(myform.value))
+    let param = {
+      queueFormat: myform.value.queueFormat
+    }
+    let params = {
+      footerInput: myform.value.footerInput,
+      statusLogo: (myform.value.logo == 1 ? myform.value.logo : 0),
+      statusQR: (myform.value.QR == 1 ? myform.value.QR : 0),
+      statusWait: (myform.value.wait == 1 ? myform.value.wait : 0),
+      statusFooter: (myform.value.footer == 1 ? myform.value.footer : 0)
+    }
+    console.log(params)
+    this.settingsService.setQueueFormat(param).subscribe(res => {
+      console.log(res)
+    }, err => console.log(err))
+    this.settingsService.setShowSettings(params).subscribe(res => {
+      console.log(res)
+      this.logo = ""
+      this.QR = ""
+      this.wait = ""
+      this.footer = ""
+      this.getShowSettings();
+      this.getShowSettingsByStatus();
+    }, err => console.log(err))
   }
 
 }
