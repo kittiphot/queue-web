@@ -28,4 +28,8 @@ export class SettingsService {
   getShowSettings() {
     return this.http.get(`${API_URL}/settings`);
   }
+
+  getShowSettingsByStatus() {
+    return this.http.get(`${API_URL}/settings_by_status`);
+  }
 }

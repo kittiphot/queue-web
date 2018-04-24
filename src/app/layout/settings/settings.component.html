@@ -45,23 +45,31 @@
     <br>
 
     <div class="row">
-      <div class="col-md-4 text-right">
+      <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox">
+          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          <label>
-            Logo
-          </label>
+          Logo
+        </div>
+      </div>
+      <div class="col-md-6 col-6 text-center">
+        <div class="form-group">
+          {{ logo }}
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4 text-right"></div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-1 col-1 text-right"></div>
+      <div class="col-md-5 col-5 text-center">
+        <div class="form-group">
+          {{ queueFormat }}1
+        </div>
+      </div>
+      <div class="col-md-6 col-6 text-center">
         <div class="form-group">
           {{ queueFormat }}1
         </div>
@@ -69,23 +77,31 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4 text-right">
+      <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox">
+          <input type="checkbox" name="QR" ngModel="{{ QR }}">
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          <label>
-            QR Code
-          </label>
+          QR Code
+        </div>
+      </div>
+      <div class="col-md-6 col-6 text-center">
+        <div class="form-group">
+          {{ QR }}
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4 text-right"></div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-1 col-1 text-right"></div>
+      <div class="col-md-5 col-5 text-center">
+        <div class="form-group">
+          Ex. 24/04/18. 10:30:12
+        </div>
+      </div>
+      <div class="col-md-6 col-6 text-center">
         <div class="form-group">
           Ex. 24/04/18. 10:30:12
         </div>
@@ -93,31 +109,37 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4 text-right">
+      <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox">
+          <input type="checkbox" name="wait" ngModel="{{ wait }}">
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          <label>
-            คิวที่รอ
-          </label>
+          คิวที่รอ
+        </div>
+      </div>
+      <div class="col-md-6 col-6 text-center">
+        <div class="form-group">
+          {{ wait }}
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4 text-right">
+      <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox">
+          <input type="checkbox" name="footer" ngModel="{{ footer }}">
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          <label>
-            <input type="text" class="form-control" placeholder="Footer" name="footer" ngModel>
-          </label>
+          <input type="text" class="form-control" placeholder="Footer" name="footer" ngModel>
+        </div>
+      </div>
+      <div class="col-md-6 col-6 text-center">
+        <div class="form-group">
+          {{ footer }}
         </div>
       </div>
     </div>
