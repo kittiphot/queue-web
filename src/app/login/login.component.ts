@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.configService.getServicebox().subscribe(res => {
       console.log(res)
       this.serviceBoxs = res
-    }, err=> console.log(err))
+    }, err => console.log(err))
   }
 
   onSubmit(myform: NgForm) {
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       password: myform.value.password
     }
     this.authenService.getAuthen(params).subscribe(res => {
-      console.log(res['0'])
+      // console.log(res['0'])
       let logged_profile = JSON.stringify(res['0']);
       localStorage.setItem('logged_profile', logged_profile);
       if (res['length'] != 0) {
@@ -50,8 +50,12 @@ export class LoginComponent implements OnInit {
         }
         else {
           if (myform.value.serviceBox != 0) {
-            localStorage.setItem('idServiceBox', myform.value.serviceBox);
-            this.router.navigate(['staffScreen']);
+            this.configService.getServiceboxById(myform.value.serviceBox).subscribe(res => {
+              // console.log(res)
+              localStorage.setItem('idServiceBox', myform.value.serviceBox);
+              localStorage.setItem('nameServiceBox', res['name']);
+              this.router.navigate(['staffScreen']);
+            }, err => console.log(err))
           }
         }
       }

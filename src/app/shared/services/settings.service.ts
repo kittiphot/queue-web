@@ -24,4 +24,8 @@ export class SettingsService {
   getLastQueue() {
     return this.http.get(`${API_URL}/last`);
   }
+
+  getShowSettings() {
+    return this.http.get(`${API_URL}/settings`);
+  }
 }

@@ -18,6 +18,7 @@ export class StaffScreenComponent implements OnInit {
   private queueAmount: any
   private time: any
   private idServiceBox: any
+  private nameServiceBox: any
   private idStaff: any
 
   constructor(
@@ -27,6 +28,7 @@ export class StaffScreenComponent implements OnInit {
     private dateTimeService: DateTimeService
   ) {
     this.idServiceBox = localStorage.getItem('idServiceBox')
+    this.nameServiceBox = localStorage.getItem('nameServiceBox')
     this.idStaff = JSON.parse(localStorage.getItem('logged_profile'))['id']
   }
 
@@ -85,6 +87,7 @@ export class StaffScreenComponent implements OnInit {
     localStorage.removeItem('isLoggedin');
     localStorage.removeItem('logged_profile');
     localStorage.removeItem('idServiceBox');
+    localStorage.removeItem('nameServiceBox');
     this.router.navigate(['login']);
   }
 

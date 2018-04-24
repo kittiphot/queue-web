@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
         localStorage.removeItem('isLoggedin');
         localStorage.removeItem('logged_profile');
         localStorage.removeItem('idServiceBox');
+        localStorage.removeItem('nameServiceBox');
     }
 
     changeLang(language: string) {

@@ -29,7 +29,8 @@
       </div>
       <div class="col-md-1 text-right">
         <div class="form-group">
-          <button type="submit" class="btn btn-warning" (click)="resetQueue()"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset</button>
+          <button type="button" class="btn btn-warning" (click)="resetQueue()">
+            <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset</button>
         </div>
       </div>
       <div class="col-md-4 text-right">
@@ -62,7 +63,7 @@
       <div class="col-md-4 text-right"></div>
       <div class="col-md-4 text-center">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="00001" name="queue" ngModel="{{ queueFormat }}{{ lastQueue }}" disabled>
+          {{ queueFormat }}1
         </div>
       </div>
     </div>
@@ -86,7 +87,7 @@
       <div class="col-md-4 text-right"></div>
       <div class="col-md-4 text-center">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Date Time" name="dateTime" ngModel="{{ date }}.&nbsp;{{ time }}" disabled>
+          Ex. 24/04/18. 10:30:12
         </div>
       </div>
     </div>
@@ -115,7 +116,7 @@
       <div class="col-md-4 text-center">
         <div class="form-group">
           <label>
-            Footer
+            <input type="text" class="form-control" placeholder="Footer" name="footer" ngModel>
           </label>
         </div>
       </div>

@@ -12,11 +12,8 @@ import { DateTimeService } from '../../shared/services/datetime.service'
   animations: [routerTransition()]
 })
 export class SettingsComponent implements OnInit {
-  private settings: any
   private queueFormat: any
   private lastQueue: any
-  private date :any
-  private time :any
 
   constructor(
     private settingsService: SettingsService,
@@ -26,28 +23,11 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {
     this.getSettings();
-    this.getDate();
-    this.getTime();
-  }
-
-  getDate() {
-    this.dateTimeService.getDate().subscribe(res => {
-      // console.log(res)
-      this.date = res;
-    }, err => console.log(err))
-  }
-
-  getTime() {
-    this.dateTimeService.getTime().subscribe(res => {
-      // console.log(res)
-      this.time = res;
-    }, err => console.log(err))
   }
 
   getSettings() {
     this.settingsService.getSettings().subscribe(res => {
       // console.log(res)
-      this.settings = res
       this.queueFormat = res['0']['value']
       this.lastQueue = res['1']['value']
     }, err => console.log(err))
