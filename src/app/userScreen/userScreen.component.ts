@@ -33,28 +33,28 @@ export class UserScreenComponent implements OnInit {
 
   getDate() {
     this.dateTimeService.getDate().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.date = res;
     }, err => console.log(err))
   }
 
   getTime() {
     this.dateTimeService.getTime().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.time = res;
     }, err => console.log(err))
   }
 
   getTemp() {
     this.queueService.getTemp().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.temps = res
     }, err => console.log(err))
   }
 
   getSettings() {
     this.settingsService.getSettings().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.queueFormat = res['0']['value']
     }, err => console.log(err))
   }
