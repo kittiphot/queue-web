@@ -1,0 +1,21 @@
+$topnav-background-color: #222;
+.userScreen3-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    // background: $topnav-background-color;
+    text-align: center;
+    // color: #fff;
+    padding: 20px;
+    .table, th, td {
+        border: 2px solid rgb(0, 123, 255);
+        font-size: 30px;
+        
+    }
+    background-color: #c0c0c0
+    
+
+}

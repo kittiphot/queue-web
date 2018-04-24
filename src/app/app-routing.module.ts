@@ -13,7 +13,12 @@ const routes: Routes = [
     { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
+    { path: 'userScreen2', loadChildren: './userScreen2/userScreen2.module#UserScreen2Module' },
+    { path: 'userScreen3', loadChildren: './userScreen3/userScreen3.module#UserScreen3Module' },
+
+
     { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
+
     { path: '**', redirectTo: 'not-found' }
 ];
 
