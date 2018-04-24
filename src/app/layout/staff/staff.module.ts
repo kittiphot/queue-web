@@ -13,7 +13,6 @@ import { StatModule } from '../../shared';
 import { ConfigService } from '../../shared/services/config.service'
 // import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import { EditStaffComponent } from './edit-staff/edit-staff.component';
 
 import { FormsModule } from '@angular/forms';
 import { StaffFormComponent } from './staff.form.component';
@@ -31,7 +30,6 @@ import { StaffFormComponent } from './staff.form.component';
     ],
     declarations: [
         StaffComponent,
-        EditStaffComponent,
         TimelineComponent,
         NotificationComponent,
         ChatComponent,
