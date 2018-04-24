@@ -40,4 +40,9 @@ export class QueueService {
   callQueue(params) {
     return this.http.post(`${API_URL}/list/edit`, params);
   }
+
+   getleftQueue($queue){
+    return Observable.interval(1000).flatMap((i) =>
+    this.http.get(`${API_URL}/queue/left/` + $queue))
+   }
 }
