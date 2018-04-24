@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ShowSettingsComponent } from './showSettings.component';
+import { ScreenComponent } from './Screen.component';
 
 const routes: Routes = [
     {
-        path: '', component: ShowSettingsComponent
+        path: '',
+        component: ScreenComponent
     }
 ];
 
@@ -12,5 +13,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class ShowSettingsRoutingModule {
-}
+export class ScreenRoutingModule {}

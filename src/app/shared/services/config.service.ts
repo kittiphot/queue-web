@@ -14,8 +14,8 @@ export class ConfigService {
     return this.http.get(`${API_URL}/staff/${id}`);
   }
 
-  setEditstaff(params){
-    return this.http.post(`${API_URL}/staff/edit`, params);
+  setstaff(params ,status){
+    return this.http.post(`${API_URL}/staff/${status}`, params);
   }
 
   getServicebox() {
@@ -30,9 +30,6 @@ export class ConfigService {
 
   setServicebox2(params, status) {
     return this.http.post(`${API_URL}/servicebox/${status}`, params);
-  }
-  setCStaff(params) {
-    return this.http.post(`${API_URL}/staff/create`,params);
   }
   // setServicebox(params, status) {
   //   console.log("POST");
