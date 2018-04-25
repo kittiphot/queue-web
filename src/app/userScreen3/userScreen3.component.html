@@ -44,15 +44,14 @@
       
 
           <div class="row">
-              <div class="column" style="background-color:#c0c0c0;">
-
+              <div class="column" style="background-color:#ffffff;">
   <div class="row">
     <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table table-bordered">
+        <div class="card text-white bg-primary mb-3">
+        <table class="table">
           <tbody>
             <tr>
-              <th>หมายเลข</th>
+              <th class="text-center">หมายเลข</th>
             </tr>
             <tr *ngFor="let temp of temps">
               <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
@@ -66,21 +65,26 @@
 
   
 
-<div class="column" style="background-color:#c0c0c0;">
-    <table class="table table-bordered">
+<div class="column" style="background-color:#ffffff;">
+    <div class="card text-white bg-primary mb-3">
+        
+
+    <table class="table">
 
     <tbody>
         <tr>
-          <th>ช่องบริการ</th>
+          <th class="text-center">ช่องบริการ</th>
         </tr>
         <tr *ngFor="let temp of temps">
           <th>{{ temp.name }}</th>
         </tr>
       </tbody>
+
     </table>
     </div>
 
   
+</div>
 </div>
  </body>
  

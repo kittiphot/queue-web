@@ -1,3 +1,4 @@
+
 $topnav-background-color: #222;
 .userScreen2-page {
     position: absolute;
@@ -10,12 +11,23 @@ $topnav-background-color: #222;
     text-align: center;
     // color: #fff;
     padding: 20px;
-    .table, th, td {
-        border: 2px solid rgb(0, 123, 255);
-        font-size: 30px;
-        
-    }
-    background-color: #c0c0c0
+    font-size: 30px;
+    font-family: 'Itim', cursive;
+    background-color: #7aa5d2
     
 
+}
+th{
+    font-size: 40px;
+    font-family: 'Kanit', sans-serif;
+}
+h1{
+    font-size:60px;
+    font-family: 'Kanit', sans-serif;    
+}
+
+.colorgird{
+    background-color: #fff;
+    color: #47555e;
+    
 }
