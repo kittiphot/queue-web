@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   staff: any
   serviceBoxs: any
   userScreen: any
+  alerts: Array<any> = [];
 
   constructor(
     public router: Router,
@@ -28,6 +29,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.getServiceBox();
     this.getUserScreen();
+  }
+
+  closeAlert(alert: any) {
+    const index: number = this.alerts.indexOf(alert);
+    this.alerts.splice(index, 1);
   }
 
   getUserScreen() {
@@ -51,7 +57,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(myform: NgForm) {
-    console.log(myform.value)
+    // console.log(myform.value)
+    this.alerts = [];
     let params = {
       username: myform.value.username,
       password: myform.value.password
@@ -79,7 +86,21 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['staffScreen']);
             }, err => console.log(err))
           }
+          else {
+            this.alerts.push({
+              id: 1,
+              type: 'danger',
+              message: 'Please select a service box',
+            });
+          }
         }
+      }
+      else {
+        this.alerts.push({
+          id: 1,
+          type: 'danger',
+          message: 'Username or Password Error',
+        });
       }
     }, err => console.log(err))
   }

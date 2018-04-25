@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
@@ -12,6 +13,8 @@ import { SettingsService } from '../shared/services/settings.service'
 @NgModule({
     imports: [
         CommonModule,
+        NgbCarouselModule.forRoot(),
+        NgbAlertModule.forRoot(),
         LoginRoutingModule,
         FormsModule
     ],
