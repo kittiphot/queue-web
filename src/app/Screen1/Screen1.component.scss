@@ -1,23 +1,24 @@
 $topnav-background-color: #222;
 .Screen1-page {
+    
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     overflow: auto;
-    // background: $topnav-background-color;
+    font-family: 'Kanit', sans-serif;
     // color: #fff;
     padding: 20px;
     // .row {
     // }
-    
+    background-color: rgb(122, 230, 230); 
 }
 .column {
     float: left;
     width: 50%;
-    padding: 10px;
-    height: 300px; 
+    padding: 5px;
+    height: 600px; 
 }
 
 

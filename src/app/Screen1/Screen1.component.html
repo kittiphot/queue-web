@@ -1,48 +1,47 @@
 
-<div class="Screen-page" [@routerTransition]>
-        
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    * {
-        box-sizing: border-box;
-    }
+<div class="Screen1-page" [@routerTransition]>
+   
+          <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <br><br><div class="row">
+            <div class="col-xl-12 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <h1 align='center'>ร้าน xxxx</h1><br>
+                    </div>
+                </div>
+            </div>
+        </div>
     
-    /* Create two equal columns that floats next to each other */
-    .column {
-        float: left;
-        width: 50%;
-        padding: 10px;
-        height: 300px; /* Should be removed. Only for demonstration */
-    }
-    
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    </style>
-    </head>
-    <body>
-    <br>
-    <h1 align = 'center'>ร้าน xxxxxx</h1><br>
-    
-    <div class="row">
-      <div class="column" style="background-color:rgb(253, 253, 253);">
-            <h1 align = 'center'>กรุณากดบัตรคิว</h1><br>
-            <h1 align = 'center'><button>รับบัตรคิว</button></h1><br>
-      </div>
-      <div class="column" style="background-color:rgb(253, 253, 253);">
-        <h2> <img src="http://www.zcooby.com/yellow-duck-facebook-profile-picture/"></h2>
-        <p>ใส่รูปภาพ,วีดีโอ</p>
-      </div>
-    </div>
-    <h1 align = 'center'>ขอบคุณที่ใช้บริการ</h1><br>
-    </body>
-    </html>
+        <div class="row">
+                <div class="col-xl-8 text-xs-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h1 align='center'>กรุณากดบัตรคิว</h1><br>
+            <h1 align='center'>วันที่ {{date}}</h1><br>
+            <h1 align='center'>เวลา {{ time }}</h1><br>
+              <h1 align='center'>  <a href="javascript:void(0)" class="btn btn-primary btn-lg" role="button"><h1>รับบัตรคิว</h1></a></h1>
+  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 text-xs-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                                <iframe width="425" height="315" src="https://www.youtube.com/embed/khITxbTEuZI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-xl-12 text-xs-center">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                    <!-- <marquee behavior="alternate"><h1>ขอบคุณที่ใช้บริการ  โทร.086-xxxxxxx</h1></marquee> -->
+                                    <marquee scrollamount="10"><h3> ขอบคุณที่ใช้บริการ  โทร.086-xxxxxxx</h3>  </marquee>    
+                                    <marquee scrollamount="100"><h3><button>กด</button> </h3>  </marquee>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
     
   
-</div>
