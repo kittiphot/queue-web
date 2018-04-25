@@ -33,6 +33,12 @@ export class LoginComponent implements OnInit {
     }, err => console.log(err))
   }
 
+  setLogged(params) {
+    this.authenService.setLogged(params).subscribe(res => {
+      console.log(res)
+    }, err => console.log(err))
+  }
+
   onSubmit(myform: NgForm) {
     console.log(myform.value)
     let params = {
@@ -44,6 +50,11 @@ export class LoginComponent implements OnInit {
       let logged_profile = JSON.stringify(res['0']);
       localStorage.setItem('logged_profile', logged_profile);
       if (res['length'] != 0) {
+        let params = {
+          id: res['0']['id'],
+          logged: 1
+        }
+        this.setLogged(params);
         if (res['0']['type'] == 1) {
           localStorage.setItem('isLoggedin', 'true');
           this.router.navigate(['/dashboard']);
