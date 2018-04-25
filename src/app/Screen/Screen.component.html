@@ -1,4 +1,4 @@
-<div class="Screen-page" [@routerTransition]>
+<!-- <div class="Screen-page" [@routerTransition]>
     <h1 align = 'center'>ร้าน xxxxxx</h1><br>
     
   
@@ -8,11 +8,10 @@
 
             
 
- <div class="row">
-                <div class="col-md-12 text-center">
-                   <br> <strong><h1>กรุณากดบัตรคิว</h1></strong><br>
-                   
-                </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <br> <strong><h1>กรุณากดบัตรคิว</h1></strong><br>   
+              </div>
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -36,31 +35,75 @@
 
         </div>
     </div>
-</div>
-<!-- <div class="userScreen-page" [@routerTransition]> -->
-    <!-- <div class="row"> -->
-      <!-- <div class="col-md-12"> -->
-        <!-- <div class="table-responsive"><br> -->
+</div> -->
+<!-- <div class="userScreen-page" [@routerTransition]>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive"><br>
            
-          <!-- <table class="table table-bordered"> -->
-            <!-- <thead> -->
-              <!-- <tr> -->
-                <!-- <th width="70%" colspan="2" class="text-right"> -->
-                    <!-- <h1 align = 'center'>กรุณากดบัตรคิว</h1> -->
-                <!-- </th> -->
-              <!-- </tr> -->
-            <!-- </thead> -->
-            <!-- <tbody> -->
-              <!-- <tr> -->
-                <!-- <th><h1><button>กดบัตรคิว</button></h1></th> -->
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th width="70%" colspan="2" class="text-right">
+                    <h1 align = 'center'>กรุณากดบัตรคิว</h1>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><h1><button>กดบัตรคิว</button></h1></th>
               
-              <!-- </tr> -->
+              </tr>
              
-            <!-- </tbody> -->
-          <!-- </table><br> -->
+            </tbody>
+          </table><br>
       
             
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<div class="Screen-page" [@routerTransition]>
+  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1><b>ร้าน xxxxxx</b></h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <strong>เวลา {{ time }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h3><b>กรุณากดบัตรคิว</b></h3>  
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <button class="btn rounded-btn" (click)="createQueue()">กดบัตรคิว</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h3><b>ขอบคุณที่ใช้บริการ</b></h3>
+      </div>
+    </div>
+  </div>
+
+</div>

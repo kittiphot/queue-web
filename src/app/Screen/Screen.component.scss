@@ -1,22 +1,38 @@
-$topnav-background-color: #222;
-.staffScreen-page {
+@import url('https://fonts.googleapis.com/css?family=Itim|Kanit');
+$topnav-background-color: #7AA5D2;
+:host {
+    font-family: 'Kanit', sans-serif;
+    display: block;
+}
+.Screen-page {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     overflow: auto;
-    // background: $topnav-background-color;
-    // color: #fff;
+    background: $topnav-background-color;
+    color: #F8F8F8;
     padding: 20px;
     // .row {
     // }
-    
 }
 .row {
     padding: 5px
 }
 
-.txtNumber {
-    font-size: 36pt;
+
+.rounded-btn:active {
+    color: #F8F8F8;
+    background: #FF5F5F;
+    border: 8px solid #FF5F5F;}
+
+.rounded-btn {
+    -webkit-border-radius: 50px;
+    border-radius: 130px;
+    color: #F8F8F8;
+    background: #FF5F5F;
+    border: 8px solid #F75C5C;
+    font-size: 32px;
+    padding: 145px 95px;
 }
