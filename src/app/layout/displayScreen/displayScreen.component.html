@@ -1,84 +1,60 @@
 <div [@routerTransition]>
-
-
-  <h2 class="text-muted">
-    Settings
-    <!-- <small>Statistics Overview</small> -->
-  </h2>
-
-  <br>
-
   <form #value="ngForm" (ngSubmit)="onSubmit(value)">
 
     <div class="row">
       <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
+        <div class="radio">
+          <input type="radio" id="userScreen1" name="userScreen" ngModel="{{ userScreen }}" value="1">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          User Screen 1
-        </div>
-      </div>
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          Screen 1
+          <label for="userScreen1">
+            User Screen 1
+          </label>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
+        <div class="radio">
+          <input type="radio" id="userScreen2" name="userScreen" ngModel="{{ userScreen }}" value="2">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          User Screen 2
-        </div>
-      </div>
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          Screen 2
+          <label for="userScreen2">
+            User Screen 2
+          </label>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
+        <div class="radio">
+          <input type="radio" id="userScreen3" name="userScreen" ngModel="{{ userScreen }}" value="3">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          User Screen 3
+          <label for="userScreen3">
+            User Screen 3
+          </label>
         </div>
       </div>
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-right">
         <div class="form-group">
-          Screen 3
+          <button type="submit" class="btn btn-success">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save
+          </button>
         </div>
       </div>
     </div>
 
   </form>
-
 </div>

@@ -12,7 +12,6 @@ import {
 } from './components';
 import { StatModule } from '../../shared';
 import { SettingsService } from '../../shared/services/settings.service'
-import { DateTimeService } from '../../shared/services/datetime.service'
 
 @NgModule({
     imports: [
@@ -30,8 +29,7 @@ import { DateTimeService } from '../../shared/services/datetime.service'
         ChatComponent
     ],
     providers: [
-        SettingsService,
-        DateTimeService
+        SettingsService
     ]
 })
 export class DisplayScreenModule {}
