@@ -16,11 +16,6 @@ export class QueueService {
       this.http.get(`${API_URL}/todo_temp`)
     )
   }
-  getLast()
-  {   return Observable.interval(1000).flatMap((i) =>
-      this.http.get(`${API_URL}/last`)
-    )
-  }
   getTemp() {
     return Observable.interval(1000).flatMap((i) =>
       this.http.get(`${API_URL}/temp`)
