@@ -12,6 +12,7 @@ import { SettingsService } from '../../shared/services/settings.service'
 })
 export class DisplayScreenComponent implements OnInit {
   private userScreen: any
+  private pushQueueScreen: any
   private alerts: Array<any> = [];
 
   constructor(private settingsService: SettingsService) { }
@@ -33,12 +34,13 @@ export class DisplayScreenComponent implements OnInit {
   }
 
   onSubmit(myform: NgForm) {
-    // console.log(myform.value)
+    console.log(myform.value)
     this.alerts = [];
-    let param = {
-      value: myform.value.userScreen
+    let params = {
+      userScreen: myform.value.userScreen,
+      pushQueueScreen: myform.value.pushQueueScreen
     }
-    this.settingsService.setUserScreen(param).subscribe(res => {
+    this.settingsService.setScreen(params).subscribe(res => {
       console.log(res)
       this.alerts.push({
         id: 1,
