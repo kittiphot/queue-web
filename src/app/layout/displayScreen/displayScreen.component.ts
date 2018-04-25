@@ -13,15 +13,27 @@ import { SettingsService } from '../../shared/services/settings.service'
 export class DisplayScreenComponent implements OnInit {
   private userScreen: any
 
-  constructor() {
-    this.userScreen = 3;
-  }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit() {
+    this.getUserScreen();
+  }
+
+  getUserScreen() {
+    this.settingsService.getUserScreen().subscribe(res => {
+      console.log(res)
+      this.userScreen = res['value']
+    }, err => console.log(err))
   }
 
   onSubmit(myform: NgForm) {
-    console.log(myform.value)
+    // console.log(myform.value)
+    let param = {
+      value: myform.value.userScreen
+    }
+    this.settingsService.setUserScreen(param).subscribe(res => {
+      console.log(res)
+    }, err => console.log(err))
   }
 
 }

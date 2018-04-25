@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 import { AuthenService } from '../shared/services/authen.service'
 import { ConfigService } from '../shared/services/config.service'
+import { SettingsService } from '../shared/services/settings.service'
 
 @Component({
   selector: 'app-login',
@@ -20,13 +21,20 @@ export class LoginComponent implements OnInit {
   constructor(
     public router: Router,
     private authenService: AuthenService,
-    private configService: ConfigService
-  ) {
-    // this.
-   }
+    private configService: ConfigService,
+    private settingsService: SettingsService
+  ) { }
 
   ngOnInit() {
     this.getServiceBox();
+    this.getUserScreen();
+  }
+
+  getUserScreen() {
+    this.settingsService.getUserScreen().subscribe(res => {
+      console.log(res)
+      this.userScreen = res['value']
+    }, err => console.log(err))
   }
 
   getServiceBox() {

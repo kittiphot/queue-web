@@ -7,6 +7,7 @@ import { LoginComponent } from './login.component';
 
 import { AuthenService } from '../shared/services/authen.service'
 import { ConfigService } from '../shared/services/config.service'
+import { SettingsService } from '../shared/services/settings.service'
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { ConfigService } from '../shared/services/config.service'
     declarations: [LoginComponent],
     providers: [
         AuthenService,
-        ConfigService
+        ConfigService,
+        SettingsService
     ]
 })
 export class LoginModule {}
