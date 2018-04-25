@@ -36,4 +36,12 @@ export class SettingsService {
   setShowSettings(params) {
     return this.http.post(`${API_URL}/edit_settings`, params);
   }
+
+  getUserScreen() {
+    return this.http.get(`${API_URL}/userScreen`);
+  }
+
+  setUserScreen(param) {
+    return this.http.post(`${API_URL}/edit_userScreen`, param);
+  }
 }

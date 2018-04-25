@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 import { AuthenService } from '../shared/services/authen.service'
 import { ConfigService } from '../shared/services/config.service'
+import { SettingsService } from '../shared/services/settings.service'
 
 @Component({
   selector: 'app-login',
@@ -15,21 +16,37 @@ import { ConfigService } from '../shared/services/config.service'
 export class LoginComponent implements OnInit {
   staff: any
   serviceBoxs: any
+  userScreen: any
 
   constructor(
     public router: Router,
     private authenService: AuthenService,
-    private configService: ConfigService
+    private configService: ConfigService,
+    private settingsService: SettingsService
   ) { }
 
   ngOnInit() {
     this.getServiceBox();
+    this.getUserScreen();
+  }
+
+  getUserScreen() {
+    this.settingsService.getUserScreen().subscribe(res => {
+      console.log(res)
+      this.userScreen = res['value']
+    }, err => console.log(err))
   }
 
   getServiceBox() {
     this.configService.getServicebox().subscribe(res => {
       console.log(res)
       this.serviceBoxs = res
+    }, err => console.log(err))
+  }
+
+  setLogged(params) {
+    this.authenService.setLogged(params).subscribe(res => {
+      console.log(res)
     }, err => console.log(err))
   }
 
@@ -44,6 +61,11 @@ export class LoginComponent implements OnInit {
       let logged_profile = JSON.stringify(res['0']);
       localStorage.setItem('logged_profile', logged_profile);
       if (res['length'] != 0) {
+        let params = {
+          id: res['0']['id'],
+          logged: 1
+        }
+        this.setLogged(params);
         if (res['0']['type'] == 1) {
           localStorage.setItem('isLoggedin', 'true');
           this.router.navigate(['/dashboard']);
