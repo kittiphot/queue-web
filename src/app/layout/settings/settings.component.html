@@ -47,12 +47,14 @@
     <div class="row">
       <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox" name="logo" ngModel="{{ statusLogo }}">
+          <input type="checkbox" id="logo" name="logo" ngModel="{{ statusLogo }}">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          Logo
+          <label for="logo">
+            Logo
+          </label>
         </div>
       </div>
       <div class="col-md-6 col-6 text-center">
@@ -79,12 +81,14 @@
     <div class="row">
       <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox" name="QR" ngModel="{{ statusQR }}">
+          <input type="checkbox" id="QR" name="QR" ngModel="{{ statusQR }}">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          QR Code
+          <label for="QR">
+            QR Code
+          </label>
         </div>
       </div>
       <div class="col-md-6 col-6 text-center">
@@ -111,12 +115,14 @@
     <div class="row">
       <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox" name="wait" ngModel="{{ statusWait }}">
+          <input type="checkbox" id="wait" name="wait" ngModel="{{ statusWait }}">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">
         <div class="form-group">
-          คิวที่รอ
+          <label for="wait">
+            คิวที่รอ
+          </label>
         </div>
       </div>
       <div class="col-md-6 col-6 text-center">
@@ -129,7 +135,7 @@
     <div class="row">
       <div class="col-md-1 col-1 text-right">
         <div class="checkbox">
-          <input type="checkbox" name="footer" ngModel="{{ statusFooter }}">
+          <input type="checkbox" id="footer" name="footer" ngModel="{{ statusFooter }}">
         </div>
       </div>
       <div class="col-md-5 col-5 text-center">

@@ -15,12 +15,15 @@ import { ConfigService } from '../shared/services/config.service'
 export class LoginComponent implements OnInit {
   staff: any
   serviceBoxs: any
+  userScreen: any
 
   constructor(
     public router: Router,
     private authenService: AuthenService,
     private configService: ConfigService
-  ) { }
+  ) {
+    // this.
+   }
 
   ngOnInit() {
     this.getServiceBox();
