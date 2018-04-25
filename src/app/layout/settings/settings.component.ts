@@ -22,17 +22,23 @@ export class SettingsComponent implements OnInit {
   private statusQR: any
   private statusWait: any
   private statusFooter: any
+  private timeoutID: any
+  private alerts: Array<any> = [];
 
   constructor(
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.getSettings();
     this.getShowSettings();
     this.getShowSettingsByStatus();
+  }
+
+  closeAlert(alert: any) {
+    const index: number = this.alerts.indexOf(alert);
+    this.alerts.splice(index, 1);
   }
 
   getShowSettingsByStatus() {
@@ -79,11 +85,18 @@ export class SettingsComponent implements OnInit {
   resetQueue() {
     this.settingsService.getResetQueue().subscribe(res => {
       console.log(res)
+      this.alerts = [];
+      this.alerts.push({
+        id: 1,
+        type: 'success',
+        message: 'Success reset',
+      });
     }, err => console.log(err))
   }
 
   onSubmit(myform: NgForm) {
     // console.log(myform.value))
+    this.alerts = [];
     let param = {
       queueFormat: myform.value.queueFormat
     }
@@ -94,7 +107,7 @@ export class SettingsComponent implements OnInit {
       statusWait: (myform.value.wait == 1 ? myform.value.wait : 0),
       statusFooter: (myform.value.footer == 1 ? myform.value.footer : 0)
     }
-    console.log(params)
+    // console.log(params)
     this.settingsService.setQueueFormat(param).subscribe(res => {
       console.log(res)
     }, err => console.log(err))
@@ -104,6 +117,11 @@ export class SettingsComponent implements OnInit {
       this.QR = ""
       this.wait = ""
       this.footer = ""
+      this.alerts.push({
+        id: 1,
+        type: 'success',
+        message: 'Success save',
+      });
       this.getShowSettings();
       this.getShowSettingsByStatus();
     }, err => console.log(err))
