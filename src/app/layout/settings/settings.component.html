@@ -1,154 +1,165 @@
 <div [@routerTransition]>
-
-
-  <h2 class="text-muted">
-    Settings
-    <!-- <small>Statistics Overview</small> -->
-  </h2>
-
-  <br>
-
   <form #value="ngForm" (ngSubmit)="onSubmit(value)">
+
+    <p *ngFor="let alert of alerts">
+      <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+    </p>
     <div class="row">
-      <div class="col-md-3">
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">รูปแบบคิว</span>
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-muted">
+              Settings
+            </h2>
           </div>
-          <input type="text" class="form-control" name="queueFormat" ngModel="{{ queueFormat }}">
-        </div>
-      </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-2">
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">คิวปัจจุบัน</span>
+          <div class="card-body">
+
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">คิวปัจจุบัน</span>
+                  </div>
+                  <input type="text" class="form-control" value="{{ lastQueue }}">
+                </div>
+              </div>
+              <div class="col-md-1 text-right">
+                <div class="form-group">
+                  <button type="button" class="btn btn-warning" (click)="resetQueue()">
+                    <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">รูปแบบคิว</span>
+                  </div>
+                  <input type="text" class="form-control" name="queueFormat" ngModel="{{ queueFormat }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-1 text-right">
+                <div class="checkbox">
+                  <input type="checkbox" id="logo" name="logo" ngModel="{{ statusLogo }}">
+                </div>
+              </div>
+              <div class="col-md-5 col-5 text-center">
+                <div class="form-group">
+                  <label for="logo">
+                    Logo
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 col-5 text-center">
+                <div class="form-group">
+                  {{ logo }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-1 text-right"></div>
+              <div class="col-md-5 col-5 text-center">
+                <div class="form-group">
+                  {{ queueFormat }}1
+                </div>
+              </div>
+              <div class="col-md-6 col-5 text-center">
+                <div class="form-group">
+                  {{ queueFormat }}1
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-1 text-right">
+                <div class="checkbox">
+                  <input type="checkbox" id="QR" name="QR" ngModel="{{ statusQR }}">
+                </div>
+              </div>
+              <div class="col-md-5 col-5 text-center">
+                <div class="form-group">
+                  <label for="QR">
+                    QR Code
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 col-5 text-center">
+                <div class="form-group">
+                  {{ QR }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-1 text-right"></div>
+              <div class="col-md-5 col-5 text-center">
+                <div class="form-group">
+                  Ex. 24/04/18. 10:30:12
+                </div>
+              </div>
+              <div class="col-md-6 col-5 text-center">
+                <div class="form-group">
+                  Ex. 24/04/18. 10:30:12
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-1 text-right">
+                <div class="checkbox">
+                  <input type="checkbox" id="wait" name="wait" ngModel="{{ statusWait }}">
+                </div>
+              </div>
+              <div class="col-md-5 col-5 text-center">
+                <div class="form-group">
+                  <label for="wait">
+                    คิวที่รอ
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 col-5 text-center">
+                <div class="form-group">
+                  {{ wait }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-1 text-right">
+                <div class="checkbox">
+                  <input type="checkbox" id="footer" name="footer" ngModel="{{ statusFooter }}">
+                </div>
+              </div>
+              <div class="col-md-5 col-5 text-center">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="footerInput" ngModel="{{ footer }}">
+                </div>
+              </div>
+              <div class="col-md-6 col-5 text-center">
+                <div class="form-group">
+                  {{ footer }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-success">
+                  <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save
+                </button>
+              </div>
+            </div>
+
           </div>
-          <input type="text" class="form-control" value="{{ lastQueue }}">
-        </div>
-      </div>
-      <div class="col-md-1 text-right">
-        <div class="form-group">
-          <button type="button" class="btn btn-warning" (click)="resetQueue()">
-            <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset</button>
-        </div>
-      </div>
-      <div class="col-md-4 text-right">
-        <div class="form-group">
-          <button type="submit" class="btn btn-success">
-            <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save
-          </button>
         </div>
       </div>
     </div>
 
-    <br>
-
-    <div class="row">
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" id="logo" name="logo" ngModel="{{ statusLogo }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          <label for="logo">
-            Logo
-          </label>
-        </div>
-      </div>
-      <div class="col-md-6 col-6 text-center">
-        <div class="form-group">
-          {{ logo }}
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1 col-1 text-right"></div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          {{ queueFormat }}1
-        </div>
-      </div>
-      <div class="col-md-6 col-6 text-center">
-        <div class="form-group">
-          {{ queueFormat }}1
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" id="QR" name="QR" ngModel="{{ statusQR }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          <label for="QR">
-            QR Code
-          </label>
-        </div>
-      </div>
-      <div class="col-md-6 col-6 text-center">
-        <div class="form-group">
-          {{ QR }}
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1 col-1 text-right"></div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          Ex. 24/04/18. 10:30:12
-        </div>
-      </div>
-      <div class="col-md-6 col-6 text-center">
-        <div class="form-group">
-          Ex. 24/04/18. 10:30:12
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" id="wait" name="wait" ngModel="{{ statusWait }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          <label for="wait">
-            คิวที่รอ
-          </label>
-        </div>
-      </div>
-      <div class="col-md-6 col-6 text-center">
-        <div class="form-group">
-          {{ wait }}
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1 col-1 text-right">
-        <div class="checkbox">
-          <input type="checkbox" id="footer" name="footer" ngModel="{{ statusFooter }}">
-        </div>
-      </div>
-      <div class="col-md-5 col-5 text-center">
-        <div class="form-group">
-          <input type="text" class="form-control" name="footerInput" ngModel="{{ footer }}">
-        </div>
-      </div>
-      <div class="col-md-6 col-6 text-center">
-        <div class="form-group">
-          {{ footer }}
-        </div>
-      </div>
-    </div>
   </form>
-
 </div>

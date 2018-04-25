@@ -11,32 +11,43 @@
       </a>
     </div>
     <br>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let value of data">
-          <td>{{value.id}}</td>
-          <td>{{value.name}}</td>
-          <!-- <td>{{value.status}}</td> -->
-          <td>
-            <a [routerLink]="['/servicebox/servicebox-form', value.id]" class="btn btn-warning">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            </a>
-          </td>
-          <td>
-            <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            Servicebox
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let value of data; let i = index;">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{value.name}}</td>
+                        <!-- <td>{{value.status}}</td> -->
+                        <td>
+                          <a [routerLink]="['/servicebox/servicebox-form', value.id]" class="btn btn-warning">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                          </a>
+                        </td>
+                        <td>
+                          <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </button>
+                        </td>
+                      </tr>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
   </div>
 </div>

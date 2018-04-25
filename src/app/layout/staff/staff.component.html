@@ -8,41 +8,48 @@
     <a [routerLink]="['/staff/staff-form']" class="btn btn-primary" style="color: white">
       <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
     </a>
-  </div>
+  </div><br>
 
-  <div class="card-body table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Username</th>
-          <th>Password</th>
-          <th>type</th>
-          <th>status</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of staff">
-          <td>{{data.id}}</td>
-          <td>{{data.name}}</td>
-          <td>{{data.username}}</td>
-          <td>{{data.password}}</td>
-          <td>{{data.type}}</td>
-          <td>{{data.status}}</td>
-          <td>
-            <a [routerLink]="['/staff/staff-form', data.id]" class="btn btn-warning" style="color: white">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            </a>
-          </td>
-
-          <td>
-            <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </button>
-        </tr>
-      </tbody>
-    </table>
+  <div class="card mb-3">
+      <div class="card-header">
+          Servicebox
+      </div>
+      <div class="card-body table-responsive">
+          <table class="table table-hover">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>type</th>
+                  <th>status</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of staff; let i = index;">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.username}}</td>
+                    <td>{{data.password}}</td>
+                    <td>{{data.type}}</td>
+                    <td>{{data.status}}</td>
+                    <td>
+                      <a [routerLink]="['/staff/staff-form', data.id]" class="btn btn-warning" style="color: white">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </a>
+                    </td>
+          
+                    <td>
+                      <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                  </tr>
+              
+              </tbody>
+          </table>
+      </div>
   </div>
+</div>

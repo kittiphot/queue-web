@@ -1,64 +1,85 @@
 <div class="staffScreen-page" [@routerTransition]>
-  <div class="row" style="border: 2px solid rgb(0, 123, 255);">
+  <div class="row">
     <div class="col-md-12">
 
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 col-5 text-right">
-          ช่องบริการที่ {{ nameServiceBox }}.
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 col-5 text-right" style="font-weight: bold">
+              ช่องบริการที่ {{ nameServiceBox }}.
+            </div>
+            <div class="col-md-2 col-7 text-center">
+              {{ time }}
+            </div>
+          </div>
         </div>
-        <div class="col-md-2 col-7 text-center">
-          {{ time }}
-        </div>
-      </div>
+        <div class="card-body">
 
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 col-5 text-right">
-          คิวปัจจุบัน
-        </div>
-        <div class="col-md-2 col-7 text-center">
-          {{ queueFormat }}{{ currentQueue }}
-        </div>
-      </div>
+          <!-- <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 col-5 text-right">
+              ช่องบริการที่ {{ nameServiceBox }}.
+            </div>
+            <div class="col-md-2 col-7 text-center">
+              {{ time }}
+            </div>
+          </div> -->
 
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 col-5"></div>
-        <div class="col-md-2 col-7 text-center" style="color: red">
-          เวลาเรียกคิว {{ callTime }}
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 col-5 text-right" style="font-weight: bold">
+              คิวปัจจุบัน
+            </div>
+            <div class="col-md-2 col-7 text-center">
+              {{ queueFormat }}{{ currentQueue }}
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 col-5 text-right">
-          คิวในระบบ
-        </div>
-        <div class="col-md-2 col-7 text-center">
-          {{ queueAmount }}
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 col-5"></div>
+            <div class="col-md-2 col-7 text-center" style="color: red">
+              เวลาเรียกคิว {{ callTime }}
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn btn-primary btn-lg btn-block" (click)="callQueue()">เรียกคิวใหม่</button>
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 col-5 text-right" style="font-weight: bold">
+              คิวในระบบ
+            </div>
+            <div class="col-md-2 col-7 text-center">
+              {{ queueAmount }}
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <button class="btn btn-primary btn-lg btn-block">เรียกซํ้า</button>
-        </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-primary btn-lg btn-block" (click)="callQueue()">เรียกคิวใหม่</button>
+            </div>
+          </div>
 
-        <div class="col-md-6">
-          <button class="btn btn-danger btn-lg btn-block" (click)="onLoggedout()">ออกจากระบบ</button>
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-primary btn-lg btn-block">
+                <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;เรียกซํ้า
+              </button>
+            </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn btn-info btn-lg btn-block" (click)="createQueue()">กดคิว</button>
+            <div class="col-md-6">
+              <button class="btn btn-danger btn-lg btn-block" (click)="onLoggedout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;ออกจากระบบ
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-info btn-lg btn-block" (click)="createQueue()">กดคิว</button>
+            </div>
+          </div>
+
         </div>
       </div>
 

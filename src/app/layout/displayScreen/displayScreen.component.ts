@@ -12,16 +12,42 @@ import { SettingsService } from '../../shared/services/settings.service'
 })
 export class DisplayScreenComponent implements OnInit {
   private userScreen: any
+  private pushQueueScreen: any
+  private alerts: Array<any> = [];
 
-  constructor() {
-    this.userScreen = 3;
-  }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit() {
+    this.getUserScreen();
+  }
+
+  closeAlert(alert: any) {
+    const index: number = this.alerts.indexOf(alert);
+    this.alerts.splice(index, 1);
+  }
+
+  getUserScreen() {
+    this.settingsService.getUserScreen().subscribe(res => {
+      console.log(res)
+      this.userScreen = res['value']
+    }, err => console.log(err))
   }
 
   onSubmit(myform: NgForm) {
     console.log(myform.value)
+    this.alerts = [];
+    let params = {
+      userScreen: myform.value.userScreen,
+      pushQueueScreen: myform.value.pushQueueScreen
+    }
+    this.settingsService.setScreen(params).subscribe(res => {
+      console.log(res)
+      this.alerts.push({
+        id: 1,
+        type: 'success',
+        message: 'Success save ',
+      });
+    }, err => console.log(err))
   }
 
 }

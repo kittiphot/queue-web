@@ -12,6 +12,7 @@ import { QueueService } from '../../shared/services/queue.service'
 export class Dashboard2Component implements OnInit {
   private data: any
   private todo: any
+  private count_list: any
 
   constructor(private service: QueueService) {
 
@@ -19,12 +20,16 @@ export class Dashboard2Component implements OnInit {
 
   ngOnInit() {
     this.service.getTemp().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.data = res
     }, err=> console.log(err))
     this.service.getCountTodoInList().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.todo = res
+    }, err=> console.log(err))
+    this.service.getCountListAllDay().subscribe(res => {
+      console.log(res)
+      this.count_list = res
     }, err=> console.log(err))
   }
 
