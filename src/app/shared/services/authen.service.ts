@@ -9,4 +9,8 @@ export class AuthenService {
   getAuthen(params) {
     return this.http.post(`${API_URL}/authen`, params);
   }
+
+  setLogged(params) {
+    return this.http.post(`${API_URL}/logged`, params);
+  }
 }
