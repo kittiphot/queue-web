@@ -19,8 +19,8 @@ export class Dashboard2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getLast().subscribe(res => {
-      console.log(res)
+    this.service.getTemp().subscribe(res => {
+      // console.log(res)
       this.data = res
     }, err=> console.log(err))
     this.service.getCountTodoInList().subscribe(res => {
@@ -28,7 +28,7 @@ export class Dashboard2Component implements OnInit {
       this.todo = res
     }, err=> console.log(err))
     this.service.getCountListAllDay().subscribe(res => {
-      // console.log(res)
+      console.log(res)
       this.count_list = res
     }, err=> console.log(err))
   }
