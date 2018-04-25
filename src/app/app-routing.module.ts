@@ -15,16 +15,10 @@ const routes: Routes = [
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
     { path: 'userScreen2', loadChildren: './userScreen2/userScreen2.module#UserScreen2Module' },
     { path: 'userScreen3', loadChildren: './userScreen3/userScreen3.module#UserScreen3Module' },
-
-
     { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
-<<<<<<< HEAD
-
-=======
     { path: 'Screen', loadChildren: './Screen/Screen.module#ScreenModule' },
     { path: 'Screen1', loadChildren: './Screen1/Screen1.module#Screen1Module' },
     { path: 'Screen2', loadChildren: './Screen2/Screen2.module#Screen2Module' },
->>>>>>> 9c1deb0405f667f1f81aad5b5285abfa6f91b71e
     { path: '**', redirectTo: 'not-found' }
 ];
 
