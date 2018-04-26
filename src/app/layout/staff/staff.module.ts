@@ -16,6 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { StaffFormComponent } from './staff.form.component';
+import { PageHeaderModule } from './../../shared';
+
 
 @NgModule({
     imports: [
@@ -26,7 +28,8 @@ import { StaffFormComponent } from './staff.form.component';
         StatModule,
         // BrowserModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        PageHeaderModule
     ],
     declarations: [
         StaffComponent,
