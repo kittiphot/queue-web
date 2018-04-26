@@ -6,6 +6,11 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class QueueService {
   constructor(private http: HttpClient) { }
+  getCountQueueDayInMount(){
+    return Observable.interval(1000).flatMap((i) =>
+    this.http.get(`${API_URL}/queue_day_in_month`)
+    )
+  }
   getCountQueuehour(){
     return Observable.interval(1000).flatMap((i) =>
     this.http.get(`${API_URL}/queue_in_hour`)
