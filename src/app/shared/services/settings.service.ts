@@ -37,6 +37,10 @@ export class SettingsService {
     return this.http.post(`${API_URL}/edit_settings`, params);
   }
 
+  getScreen() {
+    return this.http.get(`${API_URL}/screen`);
+  }
+
   getUserScreen() {
     return this.http.get(`${API_URL}/userScreen`);
   }
