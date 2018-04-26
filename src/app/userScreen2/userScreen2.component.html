@@ -1,51 +1,39 @@
 <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 <div class="userScreen2-page" [@routerTransition]>
-  <html>
-<div class="row">
-  
+    <html>
+    <div class="row">
+
         <div class="col-xl-12 text-xs-center">
             <div class="card mb-3">
                 <div class="card-body colorgird">
-                 <h1>ร้าน xxx</h1>   
-                 <div width="70%" colspan="2" class="text-right">
-                          {{ date }}. {{ time }}
-                      </div> 
-                      
+                    <h1>ร้าน xxx</h1>
+                    <div width="70%" colspan="2" class="text-right">
+                        {{ date }}. {{ time }}
+                    </div>
+
                 </div>
             </div>
         </div>
-</div>
+    </div>
 
-<div class="row">
-  <div class="col-xl-5 text-xs-center">
-      <div class="card mb-3">
-          <div class="card-body">
-              
-              <div class="col-md-12">
-                  <table class="card-body table table-hover">
-                    
-                      <tr>
-                        <th scope="row">หมายเลข</th>
-                        <th>ช่องบริการ</th>
-                      </tr>
-                      <tr *ngFor="let temp of temps">
-                        <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
-                        <th>{{ temp.name }}</th>
-                      </tr>
-                    
-                  </table>
-                </div>
+    <div class="row">
+        <div class="col-xl-5 text-xs-center">
+            <div class="card mb-3">
+                <div class="card-body">
 
-        
+                    <div class="col-md-12">
+                        <table class="card-body table table-hover">
 
+                            <tr>
+                                <th scope="row">หมายเลข</th>
+                                <th>ช่องบริการ</th>
+                            </tr>
+                            <tr *ngFor="let temp of temps">
+                                <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
+                                <th>{{ temp.name }}</th>
+                            </tr>
 
-          </div>
-      </div>
-  </div>
-  <div class="col-xl-7 text-xs-center">
-      <div class="card mb-3">
-          <div class="card-body">
-
+<<<<<<< HEAD
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/U33vH1wHaos?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -59,13 +47,41 @@
             <div class="card-body">
                 
                 <marquee scrollamount="5">ท่านที่มีบัตรคิว</marquee>
+=======
+                        </table>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-7 text-xs-center">
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/qIp3c2S28O4?ecver=1" frameborder="0" allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>
+                </div>
+>>>>>>> 4043bf4753ee6406e484ea86e969217bb00372d9
             </div>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-xl-12 text-xs-center">
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <marquee scrollamount="5">สวัสดีครับบบบบบบบบบบบบบ</marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </html>
 </div>
-
-
-
-</html>
-</div>
-

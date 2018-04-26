@@ -3,6 +3,81 @@
     <div class="col-md-12">
 
       <div class="card">
+        <!-- <div class="card-header">
+        </div> -->
+        <div class="card-body">
+
+
+          <div class="row">
+            <div class="col-md-6 col-7 text-right" style="font-size: 30px; font-weight: bold">
+              ช่องบริการที่ {{ nameServiceBox }}.
+            </div>
+            <div class="col-md-6 col-5 text-left" style="font-size: 30px">
+              {{ time }}
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-6">
+
+              <div class="row">
+                <div class="col-md-6 col-7 text-right" style="font-size: 25px; font-weight: bold">
+                  คิวปัจจุบัน :
+                </div>
+                <div class="col-md-6 col-5 text-center" style="font-size: 25px">
+                  {{ queueFormat }}{{ currentQueue }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-7 text-right"></div>
+                <div class="col-md-6 col-5 text-center" style="font-size: 20px; color: red">
+                  เวลาเรียกคิว {{ callTime }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-7 text-right" style="font-size: 25px; font-weight: bold">
+                  คิวในระบบ :
+                </div>
+                <div class="col-md-6 col-5 text-center" style="font-size: 25px">
+                  {{ queueAmount }}
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-primary btn-lg btn-block" (click)="callQueue()">
+                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>&nbsp;เรียกคิวใหม่
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6" style="padding-top: 10px">
+                  <button class="btn btn-primary btn-lg btn-block" (click)="repeatQueueCall()">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;เรียกซํ้า
+                  </button>
+                </div>
+                <div class="col-md-6" style="padding-top: 10px">
+                  <button class="btn btn-danger btn-lg btn-block" (click)="onLoggedout()">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;ออกจากระบบ
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="card">
         <div class="card-header">
           <div class="row">
             <div class="col-md-4"></div>
@@ -16,22 +91,12 @@
         </div>
         <div class="card-body">
 
-          <!-- <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2 col-5 text-right">
-              ช่องบริการที่ {{ nameServiceBox }}.
-            </div>
-            <div class="col-md-2 col-7 text-center">
-              {{ time }}
-            </div>
-          </div> -->
-
           <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-2 col-5 text-right" style="font-weight: bold">
               คิวปัจจุบัน
             </div>
-            <div class="col-md-2 col-7 text-center" style="font-size: 25px; color: green">
+            <div class="col-md-2 col-7 text-center" style="font-size: 25px">
               {{ queueFormat }}{{ currentQueue }}
             </div>
           </div>
@@ -74,14 +139,8 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <button class="btn btn-info btn-lg btn-block" (click)="createQueue()">กดคิว</button>
-            </div>
-          </div>
-
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>

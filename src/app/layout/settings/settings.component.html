@@ -43,6 +43,115 @@
             </div>
 
             <div class="row">
+              <div class="col-md-12">
+
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center">
+                    <tbody>
+
+                      <tr>
+                        <td scope="row" width="10%">
+                          <div class="checkbox">
+                            <input type="checkbox" id="logo" name="logo" ngModel="{{ statusLogo }}">
+                          </div>
+                        </td>
+                        <td>
+                          <label for="logo">
+                            Logo
+                          </label>
+                        </td>
+                        <td>
+                          {{ logo }}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td scope="row" width="10%">
+                        </td>
+                        <td>
+                          {{ queueFormat }}1
+                        </td>
+                        <td>
+                          {{ queueFormat }}1
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td scope="row" width="10%">
+                          <div class="checkbox">
+                            <input type="checkbox" id="QR" name="QR" ngModel="{{ statusQR }}">
+                          </div>
+                        </td>
+                        <td>
+                          <label for="QR">
+                            QR Code
+                          </label>
+                        </td>
+                        <td>
+                          {{ QR }}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td scope="row" width="10%">
+                        </td>
+                        <td>
+                          Ex. 24/04/18. 10:30:12
+                        </td>
+                        <td>
+                          Ex. 24/04/18. 10:30:12
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td scope="row" width="10%">
+                          <div class="checkbox">
+                            <input type="checkbox" id="wait" name="wait" ngModel="{{ statusWait }}">
+                          </div>
+                        </td>
+                        <td>
+                          <label for="wait">
+                            คิวที่รอ
+                          </label>
+                        </td>
+                        <td>
+                          {{ wait }}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td scope="row" width="10%">
+                          <div class="checkbox">
+                            <input type="checkbox" id="footer" name="footer" ngModel="{{ statusFooter }}">
+                          </div>
+                        </td>
+                        <td>
+                          <input type="text" class="form-control" name="footerInput" ngModel="{{ footer }}">
+                        </td>
+                        <td>
+                          {{ footer }}
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+
+                <div class="col-md-12 col-5 text-center">
+                  <div class="form-group">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+<!-- 
+            <div class="row">
               <div class="col-md-1 col-1 text-right">
                 <div class="checkbox">
                   <input type="checkbox" id="logo" name="logo" ngModel="{{ statusLogo }}">
@@ -146,7 +255,7 @@
                   {{ footer }}
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="row">
               <div class="col-md-12 text-right">
