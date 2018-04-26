@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   staff: any
   serviceBoxs: any
   userScreen: any
+  screen: any
   alerts: Array<any> = [];
 
   constructor(
@@ -29,11 +30,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.getServiceBox();
     this.getUserScreen();
+    this.getScreen();
   }
 
   closeAlert(alert: any) {
     const index: number = this.alerts.indexOf(alert);
     this.alerts.splice(index, 1);
+  }
+
+  getScreen() {
+    this.settingsService.getScreen().subscribe(res => {
+      console.log(res)
+      this.screen = res['value']
+    }, err => console.log(err))
   }
 
   getUserScreen() {
