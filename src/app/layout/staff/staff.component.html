@@ -1,56 +1,60 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Staff'"></app-page-header>
+  <br>
+  <h2 class="text-muted">
+    &nbsp;&nbsp;Staff
+    <!-- <small>Servicebox Overview</small> -->
+  </h2>
+  
   <p *ngFor="let alert of alerts">
     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
   </p>
+  
+  <div class="card-body table-responsive table-hover">
+    <div class="col-sm-12 col-md-12 text-right">
+      <a [routerLink]="['/staff/staff-form']" class="btn btn-sm btn-primary" style="color: white">
+        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
+      </a>
+    </div>
+    <br>
 
   <div class="card mb-3">
-      <div class="card-header">
-        <div class="row">
-          <div class="col text-left">
-            <h5>Staff</h5>
-          </div>
-          <div class="col text-right">
-            <a [routerLink]="['/staff/staff-form']" class="btn btn-sm btn-primary" style="color: white">
-              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
-            </a>
-          </div>
-        </div>
+    <div class="card-header">
+      Staff
+    </div>
+    <div class="card-body table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>type</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of staff; let i = index;">
+            <td>{{ i + 1 }}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.username}}</td>
+            <td>{{data.password}}</td>
+            <td>{{data.type}}</td>
+            <td>
+              <a [routerLink]="['/staff/staff-form', data.id]" class="btn btn-warning" style="color: white">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </a>
+            </td>
+            
+            <td>
+              <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="card-body table-responsive">
-          <table class="table table-hover">
-              <thead>
-              <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>type</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-              </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let data of staff; let i = index;">
-                    <td>{{ i + 1 }}</td>
-                    <td>{{data.name}}</td>
-                    <td>{{data.username}}</td>
-                    <td>{{data.password}}</td>
-                    <td>{{data.type}}</td>
-                    <td>
-                      <a [routerLink]="['/staff/staff-form', data.id]" class="btn btn-warning" style="color: white">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                      </a>
-                    </td>
-          
-                    <td>
-                      <button type="button" (click)="setmageStatus(data.id)" class="btn btn-danger">
-                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      </button>
-                  </tr>
-              
-              </tbody>
-          </table>
-      </div>
+    </div>
   </div>
 </div>
