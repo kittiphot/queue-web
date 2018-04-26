@@ -9,10 +9,10 @@
 
 
           <div class="row">
-            <div class="col-md-6 col-6 text-right" style="font-size: 30px; font-weight: bold">
+            <div class="col-md-6 col-7 text-right" style="font-size: 30px; font-weight: bold">
               ช่องบริการที่ {{ nameServiceBox }}.
             </div>
-            <div class="col-md-6 col-6 text-left" style="font-size: 30px">
+            <div class="col-md-6 col-5 text-left" style="font-size: 30px">
               {{ time }}
             </div>
           </div>
@@ -26,7 +26,7 @@
                 <div class="col-md-6 col-7 text-right" style="font-size: 25px; font-weight: bold">
                   คิวปัจจุบัน :
                 </div>
-                <div class="col-md-6 col-5 text-center" style="font-size: 25px; color: green">
+                <div class="col-md-6 col-5 text-center" style="font-size: 25px">
                   {{ queueFormat }}{{ currentQueue }}
                 </div>
               </div>
@@ -42,7 +42,7 @@
                 <div class="col-md-6 col-7 text-right" style="font-size: 25px; font-weight: bold">
                   คิวในระบบ :
                 </div>
-                <div class="col-md-6 col-5 text-center" style="font-size: 25px; color: green">
+                <div class="col-md-6 col-5 text-center" style="font-size: 25px">
                   {{ queueAmount }}
                 </div>
               </div>
@@ -52,7 +52,9 @@
 
               <div class="row">
                 <div class="col-md-12">
-                  <button class="btn btn-primary btn-lg btn-block" (click)="callQueue()">เรียกคิวใหม่</button>
+                  <button class="btn btn-primary btn-lg btn-block" (click)="callQueue()">
+                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>&nbsp;เรียกคิวใหม่
+                  </button>
                 </div>
               </div>
 
@@ -94,7 +96,7 @@
             <div class="col-md-2 col-5 text-right" style="font-weight: bold">
               คิวปัจจุบัน
             </div>
-            <div class="col-md-2 col-7 text-center" style="font-size: 25px; color: green">
+            <div class="col-md-2 col-7 text-center" style="font-size: 25px">
               {{ queueFormat }}{{ currentQueue }}
             </div>
           </div>
