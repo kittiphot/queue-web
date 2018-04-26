@@ -58,5 +58,12 @@ export class Screen1Component implements OnInit {
       this.queueFormat = res['0']['value']
     }, err => console.log(err))
   }
-  
+  createQueue() 
+  {
+
+      this.queueService.createQueue().subscribe(res => {
+        console.log(res)
+      }, err => console.log(err))
+      this.getSettings();
+  }
 }
