@@ -47,6 +47,7 @@ export class StaffFormComponent implements OnInit {
     console.log(status)
     this.service.setstaff(params, status)
     .subscribe(res => {
+      localStorage.setItem('alerts', "1");
       this.router.navigate(['staff']);
       console.log(res)
     }, err => console.log(err))
