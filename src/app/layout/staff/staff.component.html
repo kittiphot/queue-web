@@ -1,8 +1,9 @@
 <div [@routerTransition]>
-  <h2 class="text-muted">
-    Staff
-    <!-- <small>Statistics Overview</small> -->
-  </h2>
+    <br>
+    <h2 class="text-muted">
+      &nbsp;&nbsp;staff
+      <!-- <small>Servicebox Overview</small> -->
+    </h2>
 
   <p *ngFor="let alert of alerts">
     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
@@ -16,7 +17,7 @@
 
   <div class="card mb-3">
       <div class="card-header">
-          Servicebox
+          Staff
       </div>
       <div class="card-body table-responsive">
           <table class="table table-hover">
