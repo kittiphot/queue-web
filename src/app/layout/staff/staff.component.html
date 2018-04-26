@@ -1,23 +1,21 @@
 <div [@routerTransition]>
-    <br>
-    <h2 class="text-muted">
-      &nbsp;&nbsp;staff
-      <!-- <small>Servicebox Overview</small> -->
-    </h2>
-
+    <app-page-header [heading]="'Staff'"></app-page-header>
   <p *ngFor="let alert of alerts">
     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
   </p>
 
-  <div class="col-md-12 text-right">
-    <a [routerLink]="['/staff/staff-form']" class="btn btn-primary" style="color: white">
-      <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
-    </a>
-  </div><br>
-
   <div class="card mb-3">
       <div class="card-header">
-          Staff
+        <div class="row">
+          <div class="col text-left">
+            <h5>Staff</h5>
+          </div>
+          <div class="col text-right">
+            <a [routerLink]="['/staff/staff-form']" class="btn btn-sm btn-primary" style="color: white">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
+            </a>
+          </div>
+        </div>
       </div>
       <div class="card-body table-responsive">
           <table class="table table-hover">
