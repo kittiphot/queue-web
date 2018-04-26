@@ -1,94 +1,24 @@
-
+<link href="https://fonts.googleapis.com/css?family=Kanit:300i" rel="stylesheet">
 <div class="userScreen3-page" [@routerTransition]>
-    
+    <div class="card-header">
         <div width="70%" colspan="2" class="text-right">
             {{ date }}. {{ time }}
-        </div>
-        
-      
-  <h1>ร้าน xxx</h1>
-  <img src="https://vignette.wikia.nocookie.net/logopedia/images/f/f0/Washington_capitals_alternate_logo.gif/revision/latest?cb=20130929140614"width="150" height="150">
-  <head>
-
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-      * {
-          box-sizing: border-box;
-      }
-   
-      
-      
-      /* Create two equal columns that floats next to each other */
-      .column {
-          float: left;
-          width: 50%;
-          padding: 10px;
-          height: 300px; /* Should be removed. Only for demonstration */
-      }
-      .column2 {
-          float: left;
-          width: 100%;
-          padding: 10px;
-          height: 300px; /* Should be removed. Only for demonstration */
-      }
-      
-      /* Clear floats after the columns */
-      .row:after {
-          content: "";
-          display: table;
-          clear: both;
-      }
-      </style>
-      </head>
-      <body>
-      
-
-          <div class="row">
-              <div class="column" style="background-color:#ffffff;">
-  <div class="row">
-    <div class="col-md-12">
-        <div class="card text-white bg-primary mb-3">
+        </div> 
+    </div>
         <table class="table">
-          <tbody>
+            <thead>
             <tr>
-              <th class="text-center">หมายเลข</th>
+                <th scope="row">หมายเลข</th>
+                <th>ช่องบริการ</th>
             </tr>
+            </thead>
+            <tbody>
             <tr *ngFor="let temp of temps">
-              <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
+                <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
+                <th>{{ temp.name }}</th>
+
             </tr>
-          </tbody>
+            </tbody>
         </table>
-      </div>
-    </div>
+
   </div>
-</div>
-
-  
-
-<div class="column" style="background-color:#ffffff;">
-    <div class="card text-white bg-primary mb-3">
-        
-
-    <table class="table">
-
-    <tbody>
-        <tr>
-          <th class="text-center">ช่องบริการ</th>
-        </tr>
-        <tr *ngFor="let temp of temps">
-          <th>{{ temp.name }}</th>
-        </tr>
-      </tbody>
-
-    </table>
-    </div>
-
-  
-</div>
-</div>
- </body>
- 
-</div>
-
-
-
