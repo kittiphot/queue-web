@@ -1,5 +1,6 @@
 import { Screen1Module } from './Screen1.module';
 import { Screen1Component } from './Screen1.component';
+import { createQuery } from '@angular/core/src/view/query';
 
 
 
@@ -13,4 +14,5 @@ describe('Screen1Module', () => {
     it('should create an instance', () => {
         expect(Screen1Module).toBeTruthy();
     });
+   
 });
