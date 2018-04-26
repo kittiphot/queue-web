@@ -1,83 +1,68 @@
-<div class="Screen-page" [@routerTransition]>
-
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-
-            /* Create three equal columns that floats next to each other */
-
-            .column {
-                float: left;
-                width: 33.33%;
-                padding: 20px;
-                height: 300px;
-                /* Should be removed. Only for demonstration */
-            }
-
-            /* Clear floats after the columns */
-
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-        </style>
-    </head>
-
-    <body>
-        <br>
-        <h1 align='center'>ร้าน xxxxxx</h1>
-        <br>
-
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<div class="Screen2-page" [@routerTransition]>
+        <br><br>       <br>
+    <div class="row">
+            <div class="col-xl-12 text-xs-center">
+                <div class="card mb-3">
+                        <div calass= "column" style="background-color:rgb(28)  ">
+                    <div class="card-body">
+                            <h1 align='center'>QUEUE</h1><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
         <div class="row">
-            <div class="column" style="background-color:#aaa;">
-                <h2>ใส่รูป,วีดีโอ</h2>
+                <div class="col-xl-12 text-xs-center">
+                    <div class="card mb-3">
+                            <div calass= "column" style="background-color:rgb(114, 179, 240)  ">
+                        <div class="card-body">
+                                <h1 align='center'>ยินดีต้อนรับ</h1><br>
+                                <!-- <div  style="background-color:rgb(32, 141, 243)  "></div> -->
+                                <div class="row">
+                                        <div class="col-xl-8 text-xs-center">
+                                            <div class="card mb-3">
+                                                    <div calass= "column" style="background-color:rgb(80, 164, 241)  ">
+                                                <div class="card-body">
+                                                        <div class="card mb-3">
+                                                                <div class="card-body">
+                                                                        <h1 align='center'>ร้าน xxxx</h1><br><br>
+                                                                        <h2 align='center'>กรุณากดบัตรคิว</h2><br>
+                                                                        
+                                                                        <div class="form-group">
+                                                                                <div class="row">
+                                                                                  <div class="col-md-12 text-center">
+                                                                                      <button class="btn rounded-btn" (click)="createQueue()">กดบัตรคิว</button>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                        
+                                                                        
+                                                                </div>
+                                                            </div>
+                                                        
+                                               
+                                                </div>         </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 text-xs-center">
+                                            <div  class="card mb-3">
+                                                <div class="card-body" >
+                                                        <h1 align='center'> {{date}}<br> <br>{{time}}</h1>
+                                                        <br><br> <h2 align='center'>ขอบคุณที่ใช้บริการ</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
 
-            </div>
-            <div class="column" style="background-color:#bbb;">
-                <h2>ใส่รูป,วีดีโอ</h2>
-            </div>
-            <div class="column" style="background-color:#ccc;">
-                <h2>ใส่รูป,วีดีโอ</h2>
-            </div>
-        </div>
-        <br>
-        <br>
-        <h1 align='center'>
-            <button>รับบัตรคิว</button>
-        </h1>
-        <br>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <strong>
-                    <h2>วันที่ {{date}}</h2>
-                </strong>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <strong>
-                    <h2>เวลา {{ time }}</h2>
-                </strong>
-            </div>
-        </div>
-        <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
-        <br>
-        <div class="card card-default">
-            <div class="card-header">
-                <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-            </div>
-            <!-- /.card-header -->
-            <!-- /.card-body -->
-        </div>
-    </body>
 
-    </html>
 
-</div>
+
+                            
+                        
+                        </div>        </div>
+                    </div>
+                </div>
+            </div>
