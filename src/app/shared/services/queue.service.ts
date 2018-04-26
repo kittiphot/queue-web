@@ -42,6 +42,10 @@ export class QueueService {
     return this.http.get(`${API_URL}/list/create`);
   }
 
+  repeatQueueCall ($id) {
+    return this.http.get(`${API_URL}/temp/repeat/` + $id);
+  }
+
   callQueue(params) {
     return this.http.post(`${API_URL}/list/edit`, params);
   }

@@ -54,6 +54,7 @@ export class ServiceboxFormComponent implements OnInit {
     console.log(status)
     this.service.setServicebox2(params, status)
     .subscribe(res => {
+      localStorage.setItem('alerts', "1");
       this.router.navigate(['servicebox']);
       console.log(res)
     }, err => console.log(err))

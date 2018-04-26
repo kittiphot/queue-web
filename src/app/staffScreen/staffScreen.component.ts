@@ -79,6 +79,23 @@ export class StaffScreenComponent implements OnInit {
     this.getSettings();
   }
 
+  repeatQueueCall() {
+    this.queueService.repeatQueueCall(this.idServiceBox).subscribe(res => {
+      // console.log(res)
+      if (res["message"]=="repeat") {
+        for (let index = 0; index < this.queueFormat.length; index++) {
+          const element = this.queueFormat[index];
+          console.log(element)
+        }
+        for (let index = 0; index < res["queue"].length; index++) {
+          const element = res["queue"][index];
+          console.log(element)
+        }
+      }
+    }, err => console.log(err))
+    this.getSettings();
+  }
+
   // repeat() {
 
   // }

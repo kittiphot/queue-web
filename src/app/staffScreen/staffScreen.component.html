@@ -31,7 +31,7 @@
             <div class="col-md-2 col-5 text-right" style="font-weight: bold">
               คิวปัจจุบัน
             </div>
-            <div class="col-md-2 col-7 text-center">
+            <div class="col-md-2 col-7 text-center" style="font-size: 25px; color: green">
               {{ queueFormat }}{{ currentQueue }}
             </div>
           </div>
@@ -49,7 +49,7 @@
             <div class="col-md-2 col-5 text-right" style="font-weight: bold">
               คิวในระบบ
             </div>
-            <div class="col-md-2 col-7 text-center">
+            <div class="col-md-2 col-7 text-center" style="font-size: 20px">
               {{ queueAmount }}
             </div>
           </div>
@@ -62,7 +62,7 @@
 
           <div class="row">
             <div class="col-md-6">
-              <button class="btn btn-primary btn-lg btn-block">
+              <button class="btn btn-primary btn-lg btn-block" (click)="repeatQueueCall()">
                 <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;เรียกซํ้า
               </button>
             </div>
