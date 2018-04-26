@@ -59,4 +59,10 @@ export class ScreenComponent implements OnInit {
     }, err => console.log(err))
   }
   
+  createQueue() {
+    this.queueService.createQueue().subscribe(res => {
+      console.log(res)
+    }, err => console.log(err))
+    this.getSettings();
+  }
 }

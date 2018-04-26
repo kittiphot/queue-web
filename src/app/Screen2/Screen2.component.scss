@@ -6,12 +6,13 @@ $topnav-background-color: #222;
     right: 0;
     bottom: 0;
     overflow: auto;
+    font-family: 'Kanit', sans-serif;
     // background: $topnav-background-color;
     // color: #fff;
     padding: 20px;
     // .row {
     // }
-    
+    background-color: rgb(144, 181, 181); 
 }
 .column {
     float: left;
@@ -23,4 +24,19 @@ $topnav-background-color: #222;
 
 .txtNumber {
     font-size: 36pt;
+}
+.rounded-btn:active {
+    color: #F8F8F8;
+    background: rgb(5, 40, 87);
+    border: 8px solid rgb(5, 40, 87);
+}
+.rounded-btn {
+    -webkit-border-radius: 50px;
+    border-radius: 130px;
+    color: #F8F8F8;
+    background: rgb(49, 18, 221);
+    border: 8px solid rgb(49, 18, 221);
+    font-size: 32px;
+    padding: 50px 50
+    px;
 }

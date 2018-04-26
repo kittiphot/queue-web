@@ -7,6 +7,8 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { Dashboard2RoutingModule } from './dashboard2-routing.module';
 import { Dashboard2Component } from './dashboard2.component';
 
+import { ChartsModule as Ng2Charts } from 'ng2-charts';
+import { PageHeaderModule } from '../../shared';
 
 
 import {
@@ -22,6 +24,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     imports: [
+         Ng2Charts,
         CommonModule,
         FormsModule,
         NgbCarouselModule.forRoot(),
@@ -43,4 +46,6 @@ import {HttpClientModule} from '@angular/common/http';
     ],
     providers: [ConfigService,QueueService]
 })
+
+
 export class Dashboard2Module {}
