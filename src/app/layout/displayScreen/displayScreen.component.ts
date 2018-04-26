@@ -18,12 +18,20 @@ export class DisplayScreenComponent implements OnInit {
   constructor(private settingsService: SettingsService) { }
 
   ngOnInit() {
+    this.getScreen();
     this.getUserScreen();
   }
 
   closeAlert(alert: any) {
     const index: number = this.alerts.indexOf(alert);
     this.alerts.splice(index, 1);
+  }
+
+  getScreen() {
+    this.settingsService.getScreen().subscribe(res => {
+      console.log(res)
+      this.pushQueueScreen = res['value']
+    }, err => console.log(err))
   }
 
   getUserScreen() {
