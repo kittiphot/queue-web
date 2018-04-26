@@ -4,6 +4,10 @@
     <!-- <small>Statistics Overview</small> -->
   </h2>
 
+  <p *ngFor="let alert of alerts">
+    <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+  </p>
+
   <div class="col-md-12 text-right">
     <a [routerLink]="['/staff/staff-form']" class="btn btn-primary" style="color: white">
       <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
@@ -23,7 +27,6 @@
                   <th>Username</th>
                   <th>Password</th>
                   <th>type</th>
-                  <th>status</th>
                   <th>Edit</th>
                   <th>Delete</th>
               </tr>
@@ -35,7 +38,6 @@
                     <td>{{data.username}}</td>
                     <td>{{data.password}}</td>
                     <td>{{data.type}}</td>
-                    <td>{{data.status}}</td>
                     <td>
                       <a [routerLink]="['/staff/staff-form', data.id]" class="btn btn-warning" style="color: white">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
