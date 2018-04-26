@@ -1,4 +1,4 @@
-$topnav-background-color: #222;
+$topnav-background-color: #7BE1FF;
 .Screen1-page {
     
     position: absolute;
@@ -8,11 +8,11 @@ $topnav-background-color: #222;
     bottom: 0;
     overflow: auto;
     font-family: 'Kanit', sans-serif;
-    // color: #fff;
+    color: #fff;
     padding: 20px;
     // .row {
     // }
-    background-color: rgb(94, 218, 235); 
+    background-color: #1313f7 
 }
 .column {
     float: left;
@@ -27,15 +27,15 @@ $topnav-background-color: #222;
 }
 .rounded-btn:active {
     color: #F8F8F8;
-    background: rgb(5, 40, 87);
-    border: 8px solid rgb(5, 40, 87);
+    background: rgb(114, 112, 224);
+    border: 8px solid rgb(83, 80, 230);
 }
 .rounded-btn {
     -webkit-border-radius: 50px;
     border-radius: 130px;
     color: #F8F8F8;
-    background: rgb(49, 18, 221);
-    border: 8px solid rgb(49, 18, 221);
+    background: rgb(112, 110, 228);
+    border: 8px solid rgb(93, 91, 224);
     font-size: 32px;
     padding: 50px 50
     px;
