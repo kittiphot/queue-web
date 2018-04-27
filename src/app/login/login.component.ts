@@ -40,21 +40,21 @@ export class LoginComponent implements OnInit {
 
   getScreen() {
     this.settingsService.getScreen().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.screen = res['value']
     }, err => console.log(err))
   }
 
   getUserScreen() {
     this.settingsService.getUserScreen().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.userScreen = res['value']
     }, err => console.log(err))
   }
 
   getServiceBox() {
     this.configService.getServicebox().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.serviceBoxs = res
     }, err => console.log(err))
   }
