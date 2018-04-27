@@ -16,17 +16,21 @@ export class UserScreen3Component implements OnInit {
   private queueFormat : any 
   private date :any
   private time :any
+  private queue: any
+  private idQueue: any
 
   constructor(
     public router: Router,
     private queueService: QueueService,
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
-  ) { }
+  ) { 
+    this.idQueue = "0"
+    this.queue = "0"
+  }
 
   ngOnInit() { 
     this.getTemp();
-    this.getSettings();
     this.getTime();
     this.getDate();
   }
@@ -46,9 +50,23 @@ export class UserScreen3Component implements OnInit {
   }
 
   getTemp() {
+    this.getSettings();
     this.queueService.getTemp().subscribe(res => {
       // console.log(res)
       this.temps = res
+      if (this.idQueue != res['0']['id']) {
+        if (this.queue == res['0']['queue']) {
+          this.idQueue = res['0']['id']
+          console.log(this.queueFormat)
+          console.log(this.queue)
+        }
+        if (this.queue != res['0']['queue']) {
+          this.idQueue = res['0']['id']
+          this.queue = res['0']['queue']
+          console.log(this.queueFormat)
+          console.log(this.queue)
+        }
+      }
     }, err => console.log(err))
   }
 

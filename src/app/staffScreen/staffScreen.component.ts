@@ -4,7 +4,6 @@ import { routerTransition } from '../router.animations';
 import { QueueService } from '../shared/services/queue.service'
 import { SettingsService } from '../shared/services/settings.service'
 import { DateTimeService } from '../shared/services/datetime.service'
-import { Howl } from  'howler'; 
 
 @Component({
   selector: 'app-staffScreen',
@@ -75,38 +74,14 @@ export class StaffScreenComponent implements OnInit {
       idStaff: this.idStaff
     }
     this.queueService.callQueue(params).subscribe(res => {
-      // console.log(res)
-      if (res["message"] == "call") {
-        for (let index = 0; index < this.queueFormat.length; index++) {
-          const element = this.queueFormat[index];
-          // console.log(element)
-          this.playSound(element)
-        }
-        for (let index = 0; index < res["queue"].length; index++) {
-          const element = res["queue"][index];
-          // console.log(element)
-          this.playSound(element)
-        }
-      }
+      console.log(res)
     }, err => console.log(err))
     this.getSettings();
   }
 
   repeatQueueCall() {
     this.queueService.repeatQueueCall(this.idServiceBox).subscribe(res => {
-      // console.log(res)
-      if (res["message"] == "repeat") {
-        for (let index = 0; index < this.queueFormat.length; index++) {
-          const element = this.queueFormat[index];
-          // console.log(element)
-          this.playSound(element)
-        }
-        for (let index = 0; index < res["queue"].length; index++) {
-          const element = res["queue"][index];
-          // console.log(element)
-          this.playSound(element)
-        }
-      }
+      console.log(res)
     }, err => console.log(err))
     this.getSettings();
   }
@@ -124,18 +99,6 @@ export class StaffScreenComponent implements OnInit {
       console.log(res)
     }, err => console.log(err))
     this.getSettings();
-  }
-
-  playSound(param) {
-    console.log(param)
-    // var sound = new Howl({
-    //   src: [
-    //     'http://www.noiseaddicts.com/samples_1w72b820/274.mp3',
-    //   ],
-    //   autoplay: true,
-    //   volume: 1,
-    // });
-    // sound.play();
   }
 
 }
