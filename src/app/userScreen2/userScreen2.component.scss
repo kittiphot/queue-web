@@ -1,5 +1,4 @@
 
-$topnav-background-color: #222;
 .userScreen2-page {
     position: absolute;
     top: 0;
@@ -7,30 +6,33 @@ $topnav-background-color: #222;
     right: 0;
     bottom: 0;
     overflow: auto;
-    // background: $topnav-background-color;
     text-align: center;
-    // color: #fff;
     padding: 20px;
     font-size: 30px;
-    font-family: 'Itim', cursive;
-    background-color: #7BE1FF ;
-
-    
-
+    background-color: #A6E3E9 ;
 }
+
+
 th{
     font-size: 40px;
-    font-family: 'Kanit', sans-serif;
 
 
 }
 h1{
     font-size:60px;
-    font-family: 'Kanit', sans-serif;    
 }
 
 .colorgird{
-    background-color: #fff;
-    color: #47555e;
-    
+    background-color: #fff;    
+    border-radius: 15px;
+}
+
+.border-top{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.border-bottom{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
