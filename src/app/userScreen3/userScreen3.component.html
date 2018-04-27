@@ -1,24 +1,22 @@
-<link href="https://fonts.googleapis.com/css?family=Kanit:300i" rel="stylesheet">
-<div class="userScreen3-page" [@routerTransition]>
+<div class="userScreen3-page" id="full-size" [@routerTransition]>
     <div class="card-header">
         <div width="70%" colspan="2" class="text-right">
             {{ date }}. {{ time }}
         </div> 
     </div>
-        <table class="table">
-            <thead>
+    <br>
+    <table class="table">
+        <thead>
             <tr>
                 <th scope="row">หมายเลข</th>
                 <th>ช่องบริการ</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr *ngFor="let temp of temps">
-                <th scope="row">{{ queueFormat }}{{ temp.queue }}</th>
-                <th>{{ temp.name }}</th>
-
+                <td scope="row">{{ queueFormat }}{{ temp.queue }}</td>
+                <td>{{ temp.name }}</td>
             </tr>
-            </tbody>
-        </table>
-
-  </div>
+        </tbody>
+    </table>
+</div>

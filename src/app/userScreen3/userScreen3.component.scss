@@ -1,4 +1,3 @@
-$topnav-background-color: #222;
 .userScreen3-page {
     position: absolute;
     top: 0;
@@ -6,28 +5,31 @@ $topnav-background-color: #222;
     right: 0;
     bottom: 0;
     overflow: auto;
-   
-    // background: $topnav-background-color;
     text-align: center;
-    // color: #fff;
     padding: 50px;
-    background-color:#7BE1FF;
+    background-color:#A6E3E9;
     background-size: cover;
-
-    
-    
-
 }
-th{
-    
-    text-align: center;
-    font-size: 60px;
-    font-family: 'Kanit', sans-serif;
-    color: #000000 ;
-}
+
 .card-header{
-    font-size: 45px ;
-    color: rgb(0, 0, 0) ;
+    background-color: #fff;
+    border-radius: 15px;
+    font-size: 32pt ;
 }
 
+table {
+    background-color: #fff;
+    border-color: #A6E3E9;
+    border-radius: 15px;
+    font-size: 38pt;
+}
 
+th {
+    border-color: #A6E3E9;
+}
+// th{
+//     background-color: white;
+//     text-align: center;
+//     font-size: 60px;
+//     color: #000000 ;
+// }
