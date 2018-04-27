@@ -101,7 +101,6 @@ export class UserScreen2Component implements OnInit {
       autoplay: true,
       volume: 1,
       onend: function () {
-        this.test()
       }
     });
   }
