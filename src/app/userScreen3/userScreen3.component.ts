@@ -4,6 +4,7 @@ import { routerTransition } from '../router.animations';
 import { QueueService } from '../shared/services/queue.service'
 import { SettingsService } from '../shared/services/settings.service'
 import { DateTimeService } from '../shared/services/datetime.service'
+import { Howl } from 'howler';
 
 @Component({
   selector: 'app-userScreen3',
@@ -18,6 +19,8 @@ export class UserScreen3Component implements OnInit {
   private time :any
   private queue: any
   private idQueue: any
+  private idServiceBox: any
+  private delay: any
 
   constructor(
     public router: Router,
@@ -27,6 +30,7 @@ export class UserScreen3Component implements OnInit {
   ) { 
     this.idQueue = "0"
     this.queue = "0"
+    this.delay = 0
   }
 
   ngOnInit() { 
@@ -54,19 +58,24 @@ export class UserScreen3Component implements OnInit {
     this.queueService.getTemp().subscribe(res => {
       // console.log(res)
       this.temps = res
+      if (this.idQueue == "0" && this.queue == "0") {
+        this.idQueue = res['0']['id']
+        this.queue = res['0']['queue']
+      }
       if (this.idQueue != res['0']['id']) {
         if (this.queue == res['0']['queue']) {
           this.idQueue = res['0']['id']
-          console.log(this.queueFormat)
-          console.log(this.queue)
+          this.idServiceBox = res['0']['id_service_box']
+          this.substring()
         }
         if (this.queue != res['0']['queue']) {
           this.idQueue = res['0']['id']
           this.queue = res['0']['queue']
-          console.log(this.queueFormat)
-          console.log(this.queue)
+          this.idServiceBox = res['0']['id_service_box']
+          this.substring()
         }
       }
+      this.delay = 0
     }, err => console.log(err))
   }
 
@@ -75,6 +84,36 @@ export class UserScreen3Component implements OnInit {
       // console.log(res)
       this.queueFormat = res['0']['value']
     }, err => console.log(err))
+  }
+
+  substring() {
+    this.playSound("เชิญหมายเลข")
+    this.delay += 2000;
+    for (let index = 0; index < this.queueFormat.length; index++) {
+      this.playSound(this.queueFormat[index])
+      this.delay += 1500;
+    }
+    for (let index = 0; index < this.queue.length; index++) {
+      this.playSound(this.queue[index])
+      this.delay += 1500;
+    }
+    this.playSound("ที่ช่องบริการที่")
+    this.delay += 2000;
+    this.playSound(this.idServiceBox)
+    this.delay += 1000;
+    this.playSound("ค่ะ")
+  }
+
+  playSound(param) {
+    setTimeout(function () {
+      var sound = new Howl({
+        src: [
+          'assets/sounds/' + param + '.mp3'
+        ],
+        autoplay: true,
+        volume: 1,
+      });
+    }, this.delay);
   }
   
 }

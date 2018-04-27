@@ -20,6 +20,8 @@ export class UserScreenComponent implements OnInit {
   private queue: any
   private idQueue: any
   private sound: any
+  private idServiceBox: any
+  private delay: any
 
   constructor(
     public router: Router,
@@ -29,6 +31,7 @@ export class UserScreenComponent implements OnInit {
   ) {
     this.idQueue = "0"
     this.queue = "0"
+    this.delay = 0
   }
 
   ngOnInit() {
@@ -56,21 +59,24 @@ export class UserScreenComponent implements OnInit {
     this.queueService.getTemp().subscribe(res => {
       // console.log(res)
       this.temps = res
-      // if (this.idQueue == "0" && this.queue == "0") {
-      //   this.idQueue = res['0']['id']
-      //   this.queue = res['0']['queue']
-      // }
+      if (this.idQueue == "0" && this.queue == "0") {
+        this.idQueue = res['0']['id']
+        this.queue = res['0']['queue']
+      }
       if (this.idQueue != res['0']['id']) {
         if (this.queue == res['0']['queue']) {
           this.idQueue = res['0']['id']
+          this.idServiceBox = res['0']['id_service_box']
           this.substring()
         }
         if (this.queue != res['0']['queue']) {
           this.idQueue = res['0']['id']
           this.queue = res['0']['queue']
+          this.idServiceBox = res['0']['id_service_box']
           this.substring()
         }
       }
+      this.delay = 0
     }, err => console.log(err))
   }
 
@@ -82,49 +88,33 @@ export class UserScreenComponent implements OnInit {
   }
 
   substring() {
+    this.playSound("เชิญหมายเลข")
+    this.delay += 2000;
     for (let index = 0; index < this.queueFormat.length; index++) {
-      const element = this.queueFormat[index];
-      // console.log(element)
-      this.playSound(element, index)
+      this.playSound(this.queueFormat[index])
+      this.delay += 1500;
     }
     for (let index = 0; index < this.queue.length; index++) {
-      const element = this.queue[index];
-      // console.log(element)
-      this.playSound(element, index)
+      this.playSound(this.queue[index])
+      this.delay += 1500;
     }
+    this.playSound("ที่ช่องบริการที่")
+    this.delay += 2000;
+    this.playSound(this.idServiceBox)
+    this.delay += 1000;
+    this.playSound("ค่ะ")
   }
 
-  playSound(param, index) {
-    let path
-    if (param == 2) {
-      path = 'assets/sounds/2.mp3'
-    }
-    if (param == 3) {
-      path = 'assets/sounds/3.mp3'
-    }
-    this.sound = new Howl({
-      src: [
-        path,
-      ],
-      // autoplay: true,
-      volume: 1,
-    });
-    console.log(path)
-    // if (index == 0) {
-    //   this.sound = new Howl({
-    //     src: [
-    //       path,
-    //     ],
-    //     volume: 1,
-    //   });
-    //   this.sound.play()
-    // }
-    // else {
-    //   console.log(path)
-    //   this.sound.on('end', function () {
-    //     this.sound.play()
-    //   });
-    // }
+  playSound(param) {
+    setTimeout(function () {
+      var sound = new Howl({
+        src: [
+          'assets/sounds/' + param + '.mp3'
+        ],
+        autoplay: true,
+        volume: 1,
+      });
+    }, this.delay);
   }
 
 }

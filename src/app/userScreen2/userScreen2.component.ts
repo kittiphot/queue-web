@@ -19,6 +19,8 @@ export class UserScreen2Component implements OnInit {
   private time: any
   private queue: any
   private idQueue: any
+  private idServiceBox: any
+  private delay: any
 
   constructor(
     public router: Router,
@@ -28,6 +30,7 @@ export class UserScreen2Component implements OnInit {
   ) {
     this.idQueue = "0"
     this.queue = "0"
+    this.delay = 0
   }
 
   ngOnInit() {
@@ -62,14 +65,17 @@ export class UserScreen2Component implements OnInit {
       if (this.idQueue != res['0']['id']) {
         if (this.queue == res['0']['queue']) {
           this.idQueue = res['0']['id']
+          this.idServiceBox = res['0']['id_service_box']
           this.substring()
         }
         if (this.queue != res['0']['queue']) {
           this.idQueue = res['0']['id']
           this.queue = res['0']['queue']
+          this.idServiceBox = res['0']['id_service_box']
           this.substring()
         }
       }
+      this.delay = 0
     }, err => console.log(err))
   }
 
@@ -81,28 +87,33 @@ export class UserScreen2Component implements OnInit {
   }
 
   substring() {
+    this.playSound("เชิญหมายเลข")
+    this.delay += 2000;
     for (let index = 0; index < this.queueFormat.length; index++) {
-      const element = this.queueFormat[index];
-      console.log(element)
-      this.playSound()
+      this.playSound(this.queueFormat[index])
+      this.delay += 1500;
     }
     for (let index = 0; index < this.queue.length; index++) {
-      const element = this.queue[index];
-      console.log(element)
-      this.playSound()
+      this.playSound(this.queue[index])
+      this.delay += 1500;
     }
+    this.playSound("ที่ช่องบริการที่")
+    this.delay += 2000;
+    this.playSound(20)
+    this.delay += 1000;
+    this.playSound("ค่ะ")
   }
 
-  playSound() {
-    var sound = new Howl({
-      src: [
-        'assets/sounds/2.mp3',
-      ],
-      autoplay: true,
-      volume: 1,
-      onend: function () {
-      }
-    });
+  playSound(param) {
+    setTimeout(function () {
+      var sound = new Howl({
+        src: [
+          'assets/sounds/' + param + '.mp3'
+        ],
+        autoplay: true,
+        volume: 1,
+      });
+    }, this.delay);
   }
 
 }
