@@ -73,8 +73,15 @@ z<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
                                             <div class="row">
                                               <div class="col-md-12 text-center">
                                                   
-                                                  <button class="btn rounded-btn" (click)="createQueue()"><h1 align='center'>กดรับบัตรคิว</h1></button>
-                                               <br><br> <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
+                                                
+                                                <button class="btn rounded-btn" (click)="createQueue()"><h1 align='center'>กดรับบัตรคิว</h1></button>
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center">
+                                                     <br> <h1>คิวปัจจุบัน : {{ currentQueue }} </h1>
+                                                     
+                                                    </div>
+                                                     </div>
+                                                <br> <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
                                                 </div>
                                             </div>
                                           </div>

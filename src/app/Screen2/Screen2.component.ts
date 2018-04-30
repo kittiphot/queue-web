@@ -16,19 +16,27 @@ export class Screen2Component implements OnInit {
   private queueFormat : any 
   private date :any
   private time :any
+  private currentQueue: any
+  private idServiceBox: any
+  private callTime: any
+  private idStaff: any
 
   constructor(
     public router: Router,
     private queueService: QueueService,
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
-  ) { }
+  ) {
+    this.idServiceBox = localStorage.getItem('idServiceBox')
+    this.idStaff = JSON.parse(localStorage.getItem('logged_profile'))['id']
+   }
 
   ngOnInit() { 
     this.getTemp();
     this.getSettings();
     this.getTime();
     this.getDate();
+    this.getCurrentQueue();
   }
 
   getDate() {
@@ -65,5 +73,22 @@ export class Screen2Component implements OnInit {
         console.log(res)
       }, err => console.log(err))
       this.getSettings();
+  }
+  getCurrentQueue() {
+    this.queueService.getCurrentQueue(this.idServiceBox).subscribe(res => {
+      // console.log(res)
+      this.currentQueue = res['queue']
+      this.callTime = res['call_time']
+    }, err => console.log(err))
+  }
+  callQueue() {
+    let params = {
+      idServiceBox: this.idServiceBox,
+      idStaff: this.idStaff
+    }
+    this.queueService.callQueue(params).subscribe(res => {
+      console.log(res)
+    }, err => console.log(err))
+    this.getSettings();
   }
 }
