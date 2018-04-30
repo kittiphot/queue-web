@@ -1,9 +1,11 @@
 <div class="Screen-page" [@routerTransition]>
-  
+
   <div class="form-group">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1><b>ร้าน xxxxxx</b></h1>
+        <h1>
+          <b>ร้าน xxxxxx</b>
+        </h1>
       </div>
     </div>
 
@@ -19,7 +21,9 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-12 text-center">
-          <h3><b>กรุณากดบัตรคิว</b></h3>  
+        <h3>
+          <b>กรุณากดบัตรคิว</b>
+        </h3>
       </div>
     </div>
   </div>
@@ -27,7 +31,11 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-12 text-center">
-          <button class="btn rounded-btn" (click)="createQueue()">กดบัตรคิว</button>
+        <button class="btn rounded-btn" (click)="createQueue()">
+          คิวต่อไป
+          <br> {{ queueFormat }}{{ nextQueue }}
+          <br> กดบัตรคิว
+        </button>
       </div>
     </div>
   </div>
@@ -35,7 +43,9 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-12 text-center">
-          <h3><b>ขอบคุณที่ใช้บริการ</b></h3>
+        <h3>
+          <b>ขอบคุณที่ใช้บริการ</b>
+        </h3>
       </div>
     </div>
   </div>
