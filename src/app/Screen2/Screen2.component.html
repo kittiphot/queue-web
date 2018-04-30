@@ -32,7 +32,7 @@
           <br>
           <!-- <div  style="background-color:rgb(32, 141, 243)  "></div> -->
           <div class="row">
-            <div class="col-xl-4 text-xs-center">
+            <div class="col-xl-8 text-xs-center">
 
               <div calass="column" style="background-color:#B0E2FF ">
                 <div calass="column" style="background-color:#B0E2FF ">
@@ -49,41 +49,34 @@
                 </div>
               </div>
 
-            </div>
 
-            <div class="col-xl-4 text-xs-center">
-
-              <div calass="column" style="background-color:#B0E2FF ">
-                <div calass="column" style="background-color:#B0E2FF ">
-                  <div class="card-body">
-                    <h1 align='center'>
-                      คิวต่อไป
-                      <br> {{ queueFormat }}{{ nextQueue }}
-                    </h1>
-                  </div>
-                </div>
-              </div>
 
             </div>
 
+            <div calass="column" style="background-color:#B0E2FF ">
+              <div class="card-body">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <h1 align='center'>
+                        กรุณากดบัตรคิว
+                        <br>คิวต่อไป : {{ queueFormat }}{{ nextQueue }}
+                      </h1>
+                      <br>
 
-            <div class="col-xl-4 text-xs-center">
-              <div calass="column" style="background-color:#B0E2FF ">
-                <div class="card-body">
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-md-12 text-center">
-                        <h1 align='center'>กรุณากดบัตรคิว</h1>
-                        <br>
+                      <button class="btn rounded-btn" (click)="createQueue()">
+                        <h1>กดบัตรคิว</h1>
+                      </button>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <br>
+                          <h1>คิวปัจจุบัน : {{ queueFormat }}{{ currentQueue }} </h1>
 
-                        <button class="btn rounded-btn" (click)="createQueue()">
-                          <h1>กดบัตรคิว</h1>
-                        </button>
-
-                        <br>
-                        <br>
-                        <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
+                        </div>
                       </div>
+                      <br>
+                      <br>
+                      <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
                     </div>
                   </div>
                 </div>

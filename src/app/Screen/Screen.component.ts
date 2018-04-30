@@ -17,13 +17,16 @@ export class ScreenComponent implements OnInit {
   private nextQueue : any 
   private date :any
   private time :any
+  private currentQueue: any
+  private callTime: any
 
   constructor(
     public router: Router,
     private queueService: QueueService,
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
-  ) { }
+  ) {
+   }
 
   ngOnInit() { 
     this.getTemp();
@@ -31,6 +34,7 @@ export class ScreenComponent implements OnInit {
     this.getNextQueue();
     this.getTime();
     this.getDate();
+    this.getCurrentQueue();
   }
 
   getDate() {
@@ -73,5 +77,11 @@ export class ScreenComponent implements OnInit {
       console.log(res)
     }, err => console.log(err))
     this.getSettings();
+  }
+  getCurrentQueue() {
+    this.queueService.getCurrentQueue().subscribe(res => {
+      // console.log(res)
+      this.currentQueue = res
+    }, err => console.log(err))
   }
 }

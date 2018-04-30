@@ -32,8 +32,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <button class="btn rounded-btn" (click)="createQueue()">
-          คิวต่อไป
-          <br> {{ queueFormat }}{{ nextQueue }}
+          คิวต่อไป : {{ queueFormat }}{{ nextQueue }}
           <br> กดบัตรคิว
         </button>
       </div>
@@ -49,5 +48,11 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>คิวปัจจุบัน : {{ queueFormat }}{{ currentQueue }} </h1>
+     
+    </div>
+     </div>
 
 </div>

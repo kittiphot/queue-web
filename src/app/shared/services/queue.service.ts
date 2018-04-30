@@ -32,9 +32,15 @@ export class QueueService {
     )
   }
 
-  getCurrentQueue($id) {
+  getCurrentQueueByIdServiceBox($id) {
     return Observable.interval(1000).flatMap((i) =>
     this.http.get(`${API_URL}/temp/` + $id)
+    )
+  }
+
+  getCurrentQueue() {
+    return Observable.interval(1000).flatMap((i) =>
+    this.http.get(`${API_URL}/currentQueue`)
     )
   }
 
