@@ -4,6 +4,7 @@ import { routerTransition } from '../router.animations';
 import { QueueService } from '../shared/services/queue.service'
 import { SettingsService } from '../shared/services/settings.service'
 import { DateTimeService } from '../shared/services/datetime.service'
+import { parse } from 'querystring';
 
 @Component({
   selector: 'app-Screen',
@@ -19,6 +20,7 @@ export class ScreenComponent implements OnInit {
   private time :any
   private currentQueue: any
   private callTime: any
+  private leftQueue: any
 
   constructor(
     public router: Router,
@@ -35,6 +37,7 @@ export class ScreenComponent implements OnInit {
     this.getTime();
     this.getDate();
     this.getCurrentQueue();
+    this.getleftQueue();
   }
 
   getDate() {
@@ -76,6 +79,7 @@ export class ScreenComponent implements OnInit {
     this.queueService.createQueue().subscribe(res => {
       console.log(res)
     }, err => console.log(err))
+    this.print();
     this.getSettings();
   }
   getCurrentQueue() {
@@ -84,4 +88,49 @@ export class ScreenComponent implements OnInit {
       this.currentQueue = res
     }, err => console.log(err))
   }
+
+  getleftQueue(){
+    let queue = parseInt(this.nextQueue) - 1;
+    this.queueService.getleftQueue(queue).subscribe(res => {
+      // console.log(res)
+      this.leftQueue = res
+    }, err => console.log(err))
+  }
+  
+  print(): void {
+    let popupWin;
+    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+    popupWin.document.open();
+    popupWin.document.write(`
+    <body onload="window.print()" style="padding-right: 6px; text-align: center;">
+      <div class="row" style="border: 2px solid;">
+        
+        <div class="row">
+          <h2><b>ร้าน XXXXX</b></h2>
+        </div>
+        
+        
+        <div class="row">
+          <strong>เวลา ${ this.time }</strong>
+        </div>
+        
+        <br>
+        
+        <div class="row">
+          <strong>คิวของท่าน</strong>
+        </div>
+        
+        <div class="row">
+          <strong style="color: red; font-size: 34pt; text-align: center;">${ this.queueFormat }${this.nextQueue}</strong>
+        </div>
+        
+        <div class="row">
+          <p>เหลืออีก ${this.leftQueue} คิว</p>
+        </div>
+        
+      </div>
+    </body>`
+    );
+    popupWin.document.close();
+}
 }

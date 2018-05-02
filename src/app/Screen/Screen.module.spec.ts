@@ -1,14 +1,14 @@
 import { ScreenModule } from './Screen.module';
 import { ScreenRoutingModule } from './Screen-routing.module';
 
-describe('ScreenModule', () => {
-    let ScreenModule: ScreenModule;
+describe('screenModule', () => {
+    let screenModule: ScreenModule;
 
     beforeEach(() => {
-        ScreenModule = new ScreenModule();
+        screenModule = new ScreenModule();
     });
 
     it('should create an instance', () => {
-        expect(ScreenModule).toBeTruthy();
+        expect(screenModule).toBeTruthy();
     });
 });
