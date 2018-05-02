@@ -1,0 +1,21 @@
+$topnav-background-color: #222;
+.staffScreen-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    // background: $topnav-background-color;
+    // color: #fff;
+    padding: 20px;
+    // .row {
+    // }
+}
+.row {
+    padding: 5px
+}
+
+.txtNumber {
+    font-size: 36pt;
+}
