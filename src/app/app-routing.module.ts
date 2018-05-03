@@ -19,7 +19,8 @@ const routes: Routes = [
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
     { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
-
+    { path: 'queueScreen1/:queue', loadChildren: './queueScreen1/queueScreen1.module#QueueScreen1Module' },
+   
     { path: 'Screen', loadChildren: './Screen/Screen.module#ScreenModule' },
     { path: 'Screen1', loadChildren: './Screen1/Screen1.module#Screen1Module' },
     { path: 'Screen2', loadChildren: './Screen2/Screen2.module#Screen2Module' },
