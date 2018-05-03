@@ -1,36 +1,37 @@
 <div class="staffScreen-page" [@routerTransition]>
-    <div class="row" style="border: 2px solid rgb(0, 123, 255);">
+        
+      <style>
+                h1,h2,h3 {
+                    color: blue;
+                    text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
+                }
+                </style>
+ <br>
         <div class="col-md-12">
-
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h1><b>ร้าน XXXXX</b></h1>
                 </div>
-            </div>
-
-
-           
-            
+            </div>            
             <br>
-
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <strong>คิวของท่าน</strong>
+                    <strong><h2>คิวของท่าน</h2></strong>
                 </div>
             </div>
-
+            <style>
+                 
+                    </style>
             <div class="row">
                 <div class="col-md-12 text-center">
                     <strong class="txtNumber" style="color: red"><h1>{{ queueFormat }}{{myQueue}}</h1></strong>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <strong>คิวปัจจุบัน</strong>
+                    <strong><h2>คิวปัจจุบัน</h2></strong>
                 </div>
             </div>
-            
             <div class="row">
                 <div class="col-md-12 text-center">
                     <strong class="txtNumber" style="color: red;"><h2>{{ queueFormat }}{{ temps }}</h2></strong>
@@ -41,16 +42,13 @@
                         <strong><h3> {{ time }}</h3></strong>
                     </div>
                 </div>
+      <div calass="column" style="background-color:rgb(158, 188, 247) ">
             <div class="row">
                 <div class="col-md-12 text-center">
-                        <!-- <div calass="column" style="background-color:#B0E2FF "> -->
-                    <p>เหลืออีก {{queueAmount}} คิว</p>
-                  
-                <!-- </div> -->
-                                             
+                      
+                   <h3> <p>เหลืออีก {{queueAmount}} คิว</p></h3>
+                   <h3> <p>ขอบคุณที่ใช้บริการ</p></h3>
+                </div>
                 </div>
             </div>
-          
-        </div>
-    </div>
-</div>
+       </div>

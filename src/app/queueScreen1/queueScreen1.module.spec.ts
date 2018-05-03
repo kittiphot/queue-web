@@ -1,7 +1,7 @@
 import { QueueScreen1Module } from './queueScreen1.module';
 
 describe('queueScreen1Module', () => {
-    let queueScreenModule: QueueScreen1Module;
+    let queueScreen1Module: QueueScreen1Module;
 
     beforeEach(() => {
         queueScreen1Module = new QueueScreen1Module();

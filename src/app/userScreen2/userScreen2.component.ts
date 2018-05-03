@@ -116,4 +116,5 @@ export class UserScreen2Component implements OnInit {
     }, this.delay);
   }
 
+
 }

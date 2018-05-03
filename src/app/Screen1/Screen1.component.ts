@@ -34,7 +34,7 @@ export class Screen1Component implements OnInit {
     this.getNextQueue();
     this.getTime();
     this.getDate();
-    this.getCurrentQueue();
+   
   }
 
   getDate() {
