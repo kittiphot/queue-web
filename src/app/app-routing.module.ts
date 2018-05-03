@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: 'Screen1', loadChildren: './Screen1/Screen1.module#Screen1Module' },
     { path: 'Screen2', loadChildren: './Screen2/Screen2.module#Screen2Module' },
     { path: 'staffScreen', loadChildren: './staffScreen/staffScreen.module#StaffScreenModule' },
-    { path: 'queue/:queue', loadChildren: './queueScreen/queueScreen.module#QueueScreenModule' },
+    { path: 'queueScreen/:queue', loadChildren: './queueScreen/queueScreen.module#QueueScreenModule' },
     { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
@@ -25,6 +25,7 @@ const routes: Routes = [
     { path: 'Screen1', loadChildren: './Screen1/Screen1.module#Screen1Module' },
     { path: 'Screen2', loadChildren: './Screen2/Screen2.module#Screen2Module' },
     { path: 'queue1/:queue', loadChildren: './queueScreen1/queueScreen1.module#QueueScreen1Module' },
+
 
     { path: '**', redirectTo: 'not-found' }
 ];

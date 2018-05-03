@@ -1,84 +1,102 @@
-
 <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
 <div class="Screen2-page" [@routerTransition]>
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-h1 {
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px 2px rgb(23, 147, 230), 0 0 25px rgb(23, 147, 230), 0 0 5px rgb(23, 147, 230);
-}
+  <!DOCTYPE html>
+  <html>
 
-</style>
-</head>
-<br><br>       <br>
-<body>
+  <head>
+    <style>
+      h1 {
+        color: rgb(0, 0, 0);
+        text-shadow: 1px 1px 2px rgb(23, 147, 230), 0 0 25px rgb(23, 147, 230), 0 0 5px rgb(23, 147, 230);
+      }
+    </style>
+  </head>
+  <br>
+  <br>
+  <br>
 
-        <div class="Screen2-page" [@routerTransition]>
-    
-                <br><br>       <br>
-                         <h1 align='center'>QUEUE</h1><br>
-                            <div calass= "column" style="background-color:#B0E2FF">
-                                <div class="card-body">
-                                        <h1 align='center'>ยินดีต้อนรับ</h1><br>
-                                        <!-- <div  style="background-color:rgb(32, 141, 243)  "></div> -->
-                                        <div class="row">
-                                         <div class="col-xl-8 text-xs-center">
-                                                     
-                                    <div calass= "column" style="background-color:#B0E2FF ">
-                                       <div calass= "column" style="background-color:#B0E2FF ">
-                                             <div class="card-body">
-                                                <h1 align='center'>ร้าน xxxx</h1><br><br>
-                                                     <br>  <h1 align='center'> {{date}}<br> <br>{{time}}</h1>
-                                                      
-                                                     </div>   
-                                                    </div>
-                                            </div>
-                                                                
-  
-                                                       
-                                                </div>
-                                               
-                                                            <div calass= "column" style="background-color:#B0E2FF ">
-                                                        <div class="card-body" >
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                  <div class="col-md-12 text-center">
-                                                                        <h1 align='center'>กรุณากดบัตรคิว</h1><br>
-                                                                      
-                                                                        <button class="btn rounded-btn" (click)="createQueue()"><h1>กดบัตรคิว</h1></button>
-                                                                        
-                                                                                <div class="row">
-                                                                            <div class="col-md-12 text-center">
-                                                                             <br> <h1>คิวปัจจุบัน : {{ currentQueue }} </h1>
-                                                                             
-                                                                                
-                                                                            </div>
-                                                                             </div>
-                                                                        <br><br>   <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
-                                                                        <a href="javascript: w=window.open('http://yoursite.com/LinkToThePDF.pdf'); w.print(); w.close(); ">​​​​​​​​​​​​​​​​​print pdf</a>
-                                                                        <a target="_blank" href="userScreen2"userScreen2.html>tttt</a>
+  <body>
 
-                                                                    </div>
-                                                                </div>
-                                                              </div>
-                                                        </div> </div>
-                                               
-                                            </div>
-        
-        
-                                            
-                                           
-        
-                                    
-                                
-                                </div>        </div>
-                            </div>
-             
-           
-</body>
-</html>
+    <div class="Screen2-page" [@routerTransition]>
+
+      <br>
+      <br>
+      <br>
+      <h1 align='center'>QUEUE</h1>
+      <br>
+      <div calass="column" style="background-color:#B0E2FF">
+        <div class="card-body">
+          <h1 align='center'>ยินดีต้อนรับ</h1>
+          <br>
+          <!-- <div  style="background-color:rgb(32, 141, 243)  "></div> -->
+          <div class="row">
+            <div class="col-xl-8 text-xs-center">
+
+              <div calass="column" style="background-color:#B0E2FF ">
+                <div calass="column" style="background-color:#B0E2FF ">
+                  <div class="card-body">
+                    <h1 align='center'>ร้าน xxxx</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <h1 align='center'> {{date}}
+                      <br>
+                      <br>{{time}}</h1>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
+            <div calass="column" style="background-color:#B0E2FF ">
+              <div class="card-body">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <h1 align='center'>
+                        กรุณากดบัตรคิว
+                        <br>คิวต่อไป : {{ queueFormat }}{{ nextQueue }}
+                      </h1>
+                      <br>
+
+                      <button class="btn rounded-btn" (click)="createQueue()">
+                        <h1>กดบัตรคิว</h1>
+                      </button>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <br>
+                          <h1>คิวปัจจุบัน : {{ queueFormat }}{{ currentQueue }} </h1>
+
+                        </div>
+                      </div>
+                      <br>
+                      <br>
+                      <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
+  </html>
 </div>

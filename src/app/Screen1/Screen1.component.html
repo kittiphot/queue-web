@@ -1,96 +1,134 @@
-z<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+z
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 <div class="Screen1-page" [@routerTransition]>
   <!-- <h1 align='center'>ร้าน xxxx</h1><br> -->
-                              <!-- <h1 align='center'>กรุณากดบัตรคิว</h1><br> -->
-            <!-- <h1 align='center'>วันที่ {{date}}</h1><br> -->
-            <!-- <h1 align='center'>เวลา {{ time }}</h1> -->
-                  <br><br>
-            <div class="row">
-                <div class="col-xl-12 text-xs-center">
-                    <div class="card mb-3">
-                            <div calass= "column" style="background-color:#0033FF  ">
-                        <div class="card-body">
-                      <h1 align='center'>ร้าน xxxx</h1><br>
-                        </div>
-                    </div>
-                    </div>   </div>
+  <!-- <h1 align='center'>กรุณากดบัตรคิว</h1><br> -->
+  <!-- <h1 align='center'>วันที่ {{date}}</h1><br> -->
+  <!-- <h1 align='center'>เวลา {{ time }}</h1> -->
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-xl-12 text-xs-center">
+      <div class="card mb-3">
+        <div calass="column" style="background-color:#0033FF  ">
+          <div class="card-body">
+            <h1 align='center'>ร้าน xxxx</h1>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xl-6 text-xs-center">
+
+          <div class="card mb-3">
+            <div calass="column" style="background-color:#0066FF ">
+              <div class="card-body">
+
+                <h1 align='center'>วันที่</h1>
+              </div>
             </div>
-            
+          </div>
+        </div>
+        <div class="col-xl-6 text-xs-center">
+          <div class="card mb-3">
+            <div calass="column" style="background-color:#0066FF  ">
+              <div class="card-body">
+                <h1 align='center'>{{date}}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-6 text-xs-center">
+      <div class="card mb-3">
+        <div calass="column" style="background-color:#0099FF  ">
+          <div class="card-body">
+
             <div class="row">
-                
-                
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-xl-6 text-xs-center">
-                                   
-                                    <div class="card mb-3">
-                                    <div calass= "column" style="background-color:#0066FF ">
-                                        <div class="card-body">
-                                                
-                                            <h1 align='center'>วันที่</h1>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 text-xs-center">
-                                    <div class="card mb-3">
-                                            <div calass= "column" style="background-color:#0066FF  ">
-                                        <div class="card-body">
-                                              <h1 align='center'>{{date}}</h1>
-                                        </div>
-                                            </div>   </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                  <div calass="column" style="background-color:#0099FF  ">
+                    <div class="card-body">
+
+                      <h1 align='center'>เวลา</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                  <div calass="column" style="background-color:#0099FF ">
+                    <div class="card-body">
+                      <h1 align='center'>{{ time }}</h1>
                     </div>
 
-                            <div class="row">
-                                <div class="col-xl-6 text-xs-center">
-                                    <div class="card mb-3">
-                                            <div calass= "column" style="background-color:#0099FF  ">
-                                        <div class="card-body">
-                                            
-                                            <h1 align='center'>เวลา</h1>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 text-xs-center">
-                                    <div class="card mb-3">
-                                            <div calass= "column" style="background-color:#0099FF ">
-                                        <div class="card-body">
-                                            <h1 align='center'>{{ time }}</h1>
-                                        </div>
-                                  
-                                            </div>  </div>
-                                </div>
-                            </div>
-                             
-                                       <h1 align='center'>กรุณากดบัตรคิว</h1><br>
-                                  
-                           
-                                        <div class="form-group">
-                                            <div class="row">
-                                              <div class="col-md-12 text-center">
-                                                  
-                                                
-                                                <button class="btn rounded-btn" (click)="createQueue()"><h1 align='center'>กดรับบัตรคิว</h1></button>
-                                                <div class="row">
-                                                    <div class="col-md-12 text-center">
-                                                     <br> <h1>คิวปัจจุบัน : {{ currentQueue }} </h1>
-                                                     
-                                                    </div>
-                                                     </div>
-                                                <br> <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
-                                                </div>
-                                            </div>
-                                          </div>
-                                    </div>
-                              
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h1 align='center'>กรุณากดบัตรคิว</h1>
+            <br>
 
 
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12 text-center">
 
 
+                  <button class="btn rounded-btn" (click)="createQueue()">
+                    <h1 align='center'>กดรับบัตรคิว</h1>
+                  </button>
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <br>
+                      <h1>คิวปัจจุบัน : {{ currentQueue }} </h1>
 
-                        
-               
+                    </div>
+                  </div>
+                  <br>
+                  <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1 align='center'>
+    กรุณากดบัตรคิว
+    <br>คิวต่อไป
+    <br>{{ queueFormat }}{{ nextQueue }}
+  </h1>
+  <br>
+
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <button class="btn rounded-btn" (click)="createQueue()">
+          <h1 align='center'>กดรับบัตรคิว</h1>
+        </button>
+        <br>
+        <br>
+        <h1 align='center'>ขอบคุณที่ใช้บริการ</h1>
+      </div>
+    </div>
+  </div>
+</div>

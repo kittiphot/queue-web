@@ -15,12 +15,11 @@ import { print } from 'util';
 export class Screen2Component implements OnInit {
   private temps: any
   private queueFormat : any 
+  private nextQueue : any 
   private date :any
   private time :any
   private currentQueue: any
-  private idServiceBox: any
   private callTime: any
-  private idStaff: any
 
   constructor(
     public router: Router,
@@ -28,12 +27,12 @@ export class Screen2Component implements OnInit {
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
   ) {
-   
    }
 
   ngOnInit() { 
     this.getTemp();
     this.getSettings();
+    this.getNextQueue();
     this.getTime();
     this.getDate();
     
@@ -66,18 +65,32 @@ export class Screen2Component implements OnInit {
       this.queueFormat = res['0']['value']
     }, err => console.log(err))
   }
-  createQueue($timeout,$window) 
+
+  getNextQueue() {
+    this.settingsService.getNextQueue().subscribe(res => {
+      // console.log(res)
+      this.nextQueue = res
+    }, err => console.log(err))
+  }
+  
+  createQueue() 
   {
 
       this.queueService.createQueue().subscribe(res => {
         console.log(res)
       }, err => console.log(err))
       this.getSettings();
-      
+  }
+  getCurrentQueue() {
+    this.queueService.getCurrentQueue().subscribe(res => {
+      // console.log(res)
+      this.currentQueue = res
+    }, err => console.log(err))
+  }
 }
 
   
-  }
+  
   
   
 

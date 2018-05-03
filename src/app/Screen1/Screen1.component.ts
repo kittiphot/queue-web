@@ -14,21 +14,24 @@ import { DateTimeService } from '../shared/services/datetime.service'
 export class Screen1Component implements OnInit {
   private temps: any
   private queueFormat : any 
+  private nextQueue : any 
   private date :any
   private time :any
- 
+  private currentQueue: any
+  private callTime: any
+
   constructor(
     public router: Router,
     private queueService: QueueService,
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
   ) {
-    
    }
 
   ngOnInit() { 
     this.getTemp();
     this.getSettings();
+    this.getNextQueue();
     this.getTime();
     this.getDate();
    
@@ -61,6 +64,14 @@ export class Screen1Component implements OnInit {
       this.queueFormat = res['0']['value']
     }, err => console.log(err))
   }
+
+  getNextQueue() {
+    this.settingsService.getNextQueue().subscribe(res => {
+      // console.log(res)
+      this.nextQueue = res
+    }, err => console.log(err))
+  }
+
   createQueue() 
   {
 
@@ -69,5 +80,11 @@ export class Screen1Component implements OnInit {
       }, err => console.log(err))
       this.getSettings();
   }
- 
+
+  getCurrentQueue() {
+    this.queueService.getCurrentQueue().subscribe(res => {
+      // console.log(res)
+      this.currentQueue = res
+    }, err => console.log(err))
+  }
 }
