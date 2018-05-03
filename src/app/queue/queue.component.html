@@ -1,52 +1,48 @@
-<div class="staffScreen-page" [@routerTransition]>
-    <div class="row" style="border: 2px solid rgb(0, 123, 255);">
-        <div class="col-md-12">
+<body onload="window.print()">
 
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1><b>ร้าน XXXXX</b></h1>
+    <div class="staffScreen-page" [@routerTransition]>
+        <div class="row" style="border: 2px solid rgb(0, 123, 255);">
+            <div class="col-md-12">
+                
+                <div class="row">
+                    <div class="col-md-12 text-center" style="padding-top: 5px">
+                        <h4><b>ร้าน XXXXX</b></h4>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <strong>เวลา {{ time }}</strong>
+                
+                
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <strong>เวลา {{ time }}</strong>
+                    </div>
                 </div>
-            </div>
-            
-            <br>
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <strong>คิวของท่าน</strong>
+                
+                
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-12 text-center">
+                        <strong>คิวของท่าน</strong>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <strong class="txtNumber" style="color: red">{{ queueFormat }}{{myQueue}}</strong>
+                
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <strong class="txtNumber" style="color: red">{{ queueFormat }}{{myQueue}}</strong>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <strong>คิวปัจจุบัน</strong>
+                
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ngx-qrcode qrc-element-type="url" [qrc-value]="ngxQrcode2" ></ngx-qrcode>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <strong class="txtNumber" style="color: skyblue;">{{ queueFormat }}{{ temps }}</strong>
+                
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>เหลืออีก {{queueAmount}} คิว</p>
+                    </div>
                 </div>
+                
             </div>
-            
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>เหลืออีก {{queueAmount}} คิว</p>
-                </div>
-            </div>
-
         </div>
     </div>
-</div>
+</body>

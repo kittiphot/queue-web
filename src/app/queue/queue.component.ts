@@ -17,6 +17,7 @@ export class QueueComponent implements OnInit {
     private temps: any
     private callTime : any 
     private queueAmount : any
+    private ngxQrcode2: any
     
     constructor(
         private dateTimeService: DateTimeService,
@@ -27,6 +28,7 @@ export class QueueComponent implements OnInit {
 
     ngOnInit() { 
         this.myQueue = this.route.snapshot.paramMap.get('queue');
+        this.ngxQrcode2 = 'localhost:4200/queueScreen/' + this.myQueue;
         let $queue = this.myQueue;
         this.getTime();
         this.getTemp();

@@ -98,41 +98,49 @@ export class ScreenComponent implements OnInit {
   }
   
   print(): void {
-    let popupWin;
-    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
-    popupWin.document.open();
-    popupWin.document.write(`
-    <body onload="window.print()" style="padding-right: 10px; text-align: center;">
-      <div class="row" style="border: 2px solid;">
-        
-        <div class="row">
-          <h2><b>ร้าน XXXXX</b></h2>
-        </div>
-        
-        
-        <div class="row">
-          <strong>เวลา ${ this.time }</strong>
-        </div>
-        
-        <br>
-        
-        <div class="row">
-          <strong>คิวของท่าน</strong>
-        </div>
-        
-        <div class="row">
-          <strong style="color: red; font-size: 34pt; text-align: center;">${ this.queueFormat }${this.nextQueue}</strong>
-        </div>
-        
-        <div class="row">
-          <p>เหลืออีก ${this.leftQueue} คิว</p>
-        </div>
-        
-      </div>
-    </body>`
-    );
-    
-    popupWin.document.close();
+    let data = [{ time: this.time , currentQueue: this.currentQueue, nextQueue: this.nextQueue, leftQueue: this.leftQueue}];
+    console.log(data);
+    let url;
+    url = "Screen/" + this.nextQueue;
+    // url = "Screen/time=" + this.time +"&currentQueue=" + this.currentQueue + "&nextQueue=" + this.nextQueue + "&leftQueue=" + this.leftQueue;   
+    window.open(url,'','top=0,left=0,height=100%,width=auto');
 
+    // popupWin.document.open();
+    // popupWin.document.write(`
+    // <body onload="window.print()" style="padding-right: 6px; text-align: center;">
+    //   <div class="row" style="border: 2px solid;">
+        
+    //     <div class="row">
+    //       <h2><b>ร้าน XXXXX</b></h2>
+    //     </div>
+        
+        
+    //     <div class="row">
+    //       <strong>เวลา ${ this.time }</strong>
+    //     </div>
+        
+    //     <br>
+        
+    //     <div class="row">
+    //       <strong>คิวของท่าน</strong>
+    //     </div>
+        
+    //     <div class="row">
+    //       <strong style="font-size: 34pt; text-align: center;">${ this.queueFormat }${this.nextQueue}</strong>
+    //     </div>
+        
+    //     <div class="row">
+    //         <ngx-qrcode qrc-element-type="url" [qrc-value]="ngxQrcode2" ></ngx-qrcode>
+    // </div>
+
+    //     <div class="row">
+    //       <p>เหลืออีก ${this.leftQueue} คิว</p>
+    //     </div>
+        
+    //   </div>
+    // </body>`
+    // );
+    // popupWin.document.close();
+    window.close();
 }
 }
