@@ -7,14 +7,13 @@ $topnav-background-color: #222;
     bottom: 0;
     overflow: auto;
     // background: $topnav-background-color;
-    color: #004080;
+    color: #ffffff;
     padding: 20px;
-    text-shadow: 4px 4px 4px #f3f0f0;
-    
+    font-size: 20px;
 
     // .row {
     // }
-    background-image: url(https://cdn.pixabay.com/photo/2018/02/13/14/07/background-3150835_960_720.jpg);
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGjEYtynagA_K3vEFD3c4vDs1CMwg0WP-fYdecNV11EEzc56Me);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -26,14 +25,17 @@ $topnav-background-color: #222;
 }
 
 .txtNumber {
-    font-size: 36pt;
+    font-size: 20pt;
 }
 
 h1{
-    font-size: 60pt;
+    font-size: 90pt;
 
 }
+h3{
+    font-size: 60pt;
+}
 h2{
-    font-size: 50pt;
+    font-size: 36pt;
 
 }
