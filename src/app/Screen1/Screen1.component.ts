@@ -14,12 +14,11 @@ import { DateTimeService } from '../shared/services/datetime.service'
 export class Screen1Component implements OnInit {
   private temps: any
   private queueFormat : any 
+  private nextQueue : any 
   private date :any
   private time :any
   private currentQueue: any
-  private idServiceBox: any
   private callTime: any
-  private idStaff: any
 
   constructor(
     public router: Router,
@@ -27,13 +26,12 @@ export class Screen1Component implements OnInit {
     private settingsService: SettingsService,
     private dateTimeService: DateTimeService
   ) {
-    this.idServiceBox = localStorage.getItem('idServiceBox')
-    this.idStaff = JSON.parse(localStorage.getItem('logged_profile'))['id']
    }
 
   ngOnInit() { 
     this.getTemp();
     this.getSettings();
+    this.getNextQueue();
     this.getTime();
     this.getDate();
     this.getCurrentQueue();
@@ -66,6 +64,14 @@ export class Screen1Component implements OnInit {
       this.queueFormat = res['0']['value']
     }, err => console.log(err))
   }
+
+  getNextQueue() {
+    this.settingsService.getNextQueue().subscribe(res => {
+      // console.log(res)
+      this.nextQueue = res
+    }, err => console.log(err))
+  }
+
   createQueue() 
   {
 
@@ -74,21 +80,11 @@ export class Screen1Component implements OnInit {
       }, err => console.log(err))
       this.getSettings();
   }
+
   getCurrentQueue() {
-    this.queueService.getCurrentQueue(this.idServiceBox).subscribe(res => {
+    this.queueService.getCurrentQueue().subscribe(res => {
       // console.log(res)
-      this.currentQueue = res['queue']
-      this.callTime = res['call_time']
+      this.currentQueue = res
     }, err => console.log(err))
-  }
-  callQueue() {
-    let params = {
-      idServiceBox: this.idServiceBox,
-      idStaff: this.idStaff
-    }
-    this.queueService.callQueue(params).subscribe(res => {
-      console.log(res)
-    }, err => console.log(err))
-    this.getSettings();
   }
 }

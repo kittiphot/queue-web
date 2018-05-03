@@ -21,8 +21,10 @@ export class SettingsService {
     return this.http.post(`${API_URL}/editQueueFormat`, param);
   }
 
-  getLastQueue() {
-    return this.http.get(`${API_URL}/last`);
+  getNextQueue() {
+    return Observable.interval(1000).flatMap((i) =>
+      this.http.get(`${API_URL}/nextQueue`)
+    )
   }
 
   getShowSettings() {

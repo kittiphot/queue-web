@@ -33,7 +33,7 @@ export class StaffScreenComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCurrentQueue();
+    this.getCurrentQueueByIdServiceBox();
     this.getSettings();
     this.getListCount();
     this.getTime();
@@ -46,8 +46,8 @@ export class StaffScreenComponent implements OnInit {
     }, err => console.log(err))
   }
 
-  getCurrentQueue() {
-    this.queueService.getCurrentQueue(this.idServiceBox).subscribe(res => {
+  getCurrentQueueByIdServiceBox() {
+    this.queueService.getCurrentQueueByIdServiceBox(this.idServiceBox).subscribe(res => {
       // console.log(res)
       this.currentQueue = res['queue']
       this.callTime = res['call_time']

@@ -6,9 +6,10 @@ import { QueueScreenComponent } from './queueScreen.component';
 import { DateTimeService } from '../shared/services/datetime.service';
 import { QueueService } from '../shared/services/queue.service';
 import { SettingsService } from '../shared/services/settings.service';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
-    imports: [CommonModule, QueueScreenRoutingModule],
+    imports: [CommonModule, QueueScreenRoutingModule,QRCodeModule],
     declarations: [QueueScreenComponent],
     providers: [
         QueueService,
