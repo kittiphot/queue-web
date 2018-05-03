@@ -7,15 +7,35 @@ $topnav-background-color: #222;
     bottom: 0;
     overflow: auto;
     // background: $topnav-background-color;
-    // color: #fff;
+    color: #ffffff;
     padding: 20px;
+    font-size: 20px;
+
     // .row {
     // }
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGjEYtynagA_K3vEFD3c4vDs1CMwg0WP-fYdecNV11EEzc56Me);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 .row {
     padding: 5px
 }
 
 .txtNumber {
+    font-size: 20pt;
+}
+
+h1{
+    font-size: 90pt;
+
+}
+h3{
+    font-size: 60pt;
+}
+h2{
     font-size: 36pt;
+
 }

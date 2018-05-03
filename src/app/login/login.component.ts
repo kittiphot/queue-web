@@ -111,7 +111,7 @@ export class LoginComponent implements OnInit {
           message: 'Username or Password Error',
         });
       }
-    }, err => console.log(err))
+     }, err => console.log(err))
   }
 
   // onLoggedin() {
