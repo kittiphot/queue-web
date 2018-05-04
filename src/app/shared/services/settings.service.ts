@@ -8,7 +8,7 @@ export class SettingsService {
   constructor(private http: HttpClient) { }
 
   getSettings() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/config`)
     )
   }
@@ -22,7 +22,7 @@ export class SettingsService {
   }
 
   getNextQueue() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/nextQueue`)
     )
   }
