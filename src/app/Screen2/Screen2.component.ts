@@ -80,11 +80,18 @@ export class Screen2Component implements OnInit {
         console.log(res)
       }, err => console.log(err))
       this.getSettings();
+      this.print();
   }
   getCurrentQueue() {
     this.queueService.getCurrentQueue().subscribe(res => {
       // console.log(res)
       this.currentQueue = res
     }, err => console.log(err))
+  }
+  print(): void {
+    let url;
+    url = "Screen/" + this.nextQueue;
+    window.open(url,'','top=0,left=0,height=100%,width=auto');
+    window.close();
   }
 }

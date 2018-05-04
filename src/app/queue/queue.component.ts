@@ -35,7 +35,7 @@ export class QueueComponent implements OnInit {
         this.getTemp();
         this.getSettings();
         this.getleftQueue($queue);
-        setTimeout(() => window.print(),1750);
+        setTimeout(() => window.print(),3000);
         // close();
     }
 
