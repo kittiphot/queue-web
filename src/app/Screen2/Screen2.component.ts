@@ -4,7 +4,6 @@ import { routerTransition } from '../router.animations';
 import { QueueService } from '../shared/services/queue.service'
 import { SettingsService } from '../shared/services/settings.service'
 import { DateTimeService } from '../shared/services/datetime.service'
-import { print } from 'util';
 
 @Component({
   selector: 'app-Screen2',
@@ -36,7 +35,7 @@ export class Screen2Component implements OnInit {
     this.getNextQueue();
     this.getTime();
     this.getDate();
-    
+    this.getCurrentQueue();
   }
 
   getDate() {
@@ -89,9 +88,3 @@ export class Screen2Component implements OnInit {
     }, err => console.log(err))
   }
 }
-
-  
-  
-  
-  
-
