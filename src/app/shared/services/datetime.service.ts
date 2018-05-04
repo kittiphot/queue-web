@@ -8,13 +8,13 @@ export class DateTimeService {
   constructor(private http: HttpClient) { }
 
   getDate() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/date`)
     )
   }
 
   getTime() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/time`)
     )
   }

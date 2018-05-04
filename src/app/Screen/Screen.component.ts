@@ -37,7 +37,6 @@ export class ScreenComponent implements OnInit {
     this.getTime();
     this.getDate();
     this.getCurrentQueue();
-    this.getleftQueue();
   }
 
   getDate() {
@@ -89,13 +88,13 @@ export class ScreenComponent implements OnInit {
     }, err => console.log(err))
   }
 
-  getleftQueue(){
-    let queue = parseInt(this.nextQueue) - 1;
-    this.queueService.getleftQueue(queue).subscribe(res => {
-      // console.log(res)
-      this.leftQueue = res
-    }, err => console.log(err))
-  }
+  // getleftQueue(){
+  //   let queue = parseInt(this.nextQueue) - 1;
+  //   this.queueService.getleftQueue(queue).subscribe(res => {
+  //     // console.log(res)
+  //     this.leftQueue = res
+  //   }, err => console.log(err))
+  // }
   
   print(): void {
     let url;

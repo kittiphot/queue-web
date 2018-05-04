@@ -3,6 +3,7 @@ import { DateTimeService } from '../shared/services/datetime.service';
 import { SettingsService } from '../shared/services/settings.service';
 import { QueueService } from '../shared/services/queue.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -34,6 +35,8 @@ export class QueueComponent implements OnInit {
         this.getTemp();
         this.getSettings();
         this.getleftQueue($queue);
+        setTimeout(() => window.print(),1750);
+        // close();
     }
 
     getTime() {

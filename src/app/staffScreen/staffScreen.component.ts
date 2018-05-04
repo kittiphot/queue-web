@@ -34,7 +34,7 @@ export class StaffScreenComponent implements OnInit {
 
   ngOnInit() {
     this.getCurrentQueueByIdServiceBox();
-    this.getSettings();
+    // this.getSettings();
     this.getListCount();
     this.getTime();
   }
@@ -49,6 +49,7 @@ export class StaffScreenComponent implements OnInit {
   getCurrentQueueByIdServiceBox() {
     this.queueService.getCurrentQueueByIdServiceBox(this.idServiceBox).subscribe(res => {
       // console.log(res)
+      this.queueFormat = res['format']
       this.currentQueue = res['queue']
       this.callTime = res['call_time']
     }, err => console.log(err))
@@ -61,12 +62,12 @@ export class StaffScreenComponent implements OnInit {
     }, err => console.log(err))
   }
 
-  getSettings() {
-    this.settingsService.getSettings().subscribe(res => {
-      // console.log(res)
-      this.queueFormat = res['0']['value']
-    }, err => console.log(err))
-  }
+  // getSettings() {
+  //   this.settingsService.getSettings().subscribe(res => {
+  //     // console.log(res)
+  //     this.queueFormat = res['0']['value']
+  //   }, err => console.log(err))
+  // }
 
   callQueue() {
     let params = {
@@ -76,14 +77,14 @@ export class StaffScreenComponent implements OnInit {
     this.queueService.callQueue(params).subscribe(res => {
       console.log(res)
     }, err => console.log(err))
-    this.getSettings();
+    // this.getSettings();
   }
 
   repeatQueueCall() {
     this.queueService.repeatQueueCall(this.idServiceBox).subscribe(res => {
       console.log(res)
     }, err => console.log(err))
-    this.getSettings();
+    // this.getSettings();
   }
 
   onLoggedout() {
@@ -98,7 +99,7 @@ export class StaffScreenComponent implements OnInit {
     this.queueService.createQueue().subscribe(res => {
       console.log(res)
     }, err => console.log(err))
-    this.getSettings();
+    // this.getSettings();
   }
 
 }

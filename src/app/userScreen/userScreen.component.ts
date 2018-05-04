@@ -101,6 +101,7 @@ export class UserScreenComponent implements OnInit {
     this.playSound("ที่ช่องบริการที่")
     this.delay += 2000;
     this.playSound(this.idServiceBox)
+    console.log(this.idServiceBox)
     this.delay += 1000;
     this.playSound("ค่ะ")
   }
