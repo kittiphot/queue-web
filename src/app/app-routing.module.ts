@@ -24,7 +24,6 @@ const routes: Routes = [
     { path: 'Screen', loadChildren: './Screen/Screen.module#ScreenModule' },
     { path: 'Screen1', loadChildren: './Screen1/Screen1.module#Screen1Module' },
     { path: 'Screen2', loadChildren: './Screen2/Screen2.module#Screen2Module' },
-    { path: 'queue1/:queue', loadChildren: './queueScreen1/queueScreen1.module#QueueScreen1Module' },
 
 
     { path: '**', redirectTo: 'not-found' }
