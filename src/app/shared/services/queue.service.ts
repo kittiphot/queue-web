@@ -7,39 +7,39 @@ import { Observable } from 'rxjs';
 export class QueueService {
   constructor(private http: HttpClient) { }
   getCountQueueDayInMount(){
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
     this.http.get(`${API_URL}/queue_day_in_month`)
     )
   }
   getCountQueuehour(){
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
     this.http.get(`${API_URL}/queue_in_hour`)
     )
   }
   getCountListAllDay(){
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
     this.http.get(`${API_URL}/all_queue_today`)
     )
   }
   getCountTodoInList() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/todo_temp`)
     )
   }
   getTemp() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/temp`)
     )
   }
 
   getCurrentQueueByIdServiceBox($id) {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
     this.http.get(`${API_URL}/temp/` + $id)
     )
   }
 
   getCurrentQueue() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
     this.http.get(`${API_URL}/currentQueue`)
     )
   }
@@ -49,7 +49,7 @@ export class QueueService {
   }
 
   getListCount() {
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
       this.http.get(`${API_URL}/list/count`)
     )
   }
@@ -67,7 +67,7 @@ export class QueueService {
   }
 
    getleftQueue($queue){
-    return Observable.interval(1000).flatMap((i) =>
+    return Observable.interval(1250).flatMap((i) =>
     this.http.get(`${API_URL}/queue/left/` + $queue))
    }
 }
