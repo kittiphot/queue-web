@@ -17,5 +17,3 @@ import { DateTimeService } from '../shared/services/datetime.service'
     ]
 })
 export class UserScreen2Module {}
-
-

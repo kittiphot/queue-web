@@ -34,7 +34,7 @@ export class Screen1Component implements OnInit {
     this.getNextQueue();
     this.getTime();
     this.getDate();
-   
+    this.getCurrentQueue();
   }
 
   getDate() {
@@ -79,6 +79,8 @@ export class Screen1Component implements OnInit {
         console.log(res)
       }, err => console.log(err))
       this.getSettings();
+      this.print();
+
   }
 
   getCurrentQueue() {
@@ -87,4 +89,12 @@ export class Screen1Component implements OnInit {
       this.currentQueue = res
     }, err => console.log(err))
   }
+
+  print(): void {
+    let url;
+    url = "Screen/" + this.nextQueue;
+    window.open(url,'','top=0,left=0,height=100%,width=auto');
+    window.close();
+  }
+
 }
